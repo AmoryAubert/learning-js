@@ -1,0 +1,230 @@
+header {
+  background: #eee; }
+  header #menu_hr {
+    padding: 15px 0;
+    line-height: 50px;
+    width: 100%;
+    font-size: 17px; }
+    header #menu_hr img {
+      height: 40px;
+      margin-top: 5px; }
+    header #menu_hr ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none; }
+      header #menu_hr ul li a {
+        text-decoration: none;
+        color: #000;
+        padding: 0 15px; }
+      header #menu_hr ul :nth-child(-n+4) {
+        float: left; }
+        header #menu_hr ul :nth-child(-n+4) a:hover {
+          color: #666; }
+      header #menu_hr ul :nth-child(n+5) {
+        float: right; }
+      header #menu_hr ul :nth-child(n+7) a:hover {
+        color: #666; }
+      header #menu_hr ul :nth-last-child(4) {
+        border: 1px solid #000;
+        border-radius: 5px 0 0 5px;
+        background: #37f;
+        line-height: 30px;
+        padding: 0;
+        margin: 9px 0; }
+        header #menu_hr ul :nth-last-child(4) a {
+          color: #fff; }
+        header #menu_hr ul :nth-last-child(4):hover {
+          background: #33c; }
+      header #menu_hr ul :nth-last-child(5) {
+        border: 1px solid #000;
+        border-radius: 0 5px 5px 0;
+        border-left: 0;
+        background: #fff;
+        line-height: 30px;
+        padding: 0;
+        margin: 9px 0; }
+        header #menu_hr ul :nth-last-child(5):hover {
+          background: #ddd; }
+
+#head_hr {
+  color: #333;
+  text-align: center;
+  margin: 100px auto 50px auto;
+  font-size: 40px; }
+
+#artlist {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  text-align: center;
+  background: #404656;
+  border-top: 1px #000 solid;
+  border-bottom: 1px #000 solid; }
+  #artlist article:nth-child(-n+3) {
+    border-right: 1px solid #333; }
+  #artlist img {
+    padding-top: 40px; }
+  #artlist h1 {
+    font-size: 20px;
+    color: #fff; }
+  #artlist p {
+    color: #ddd;
+    padding: 0 40px 30px; }
+
+main {
+  background: #EBECF1; }
+  main section #tryit {
+    text-align: center;
+    padding: 20px 300px; }
+    main section #tryit #desc {
+      font-size: 21px;
+      margin: 20px 0; }
+    main section #tryit #tryit_btn {
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 30px;
+      background: #37f;
+      border: solid 1px #000;
+      border-radius: 5px;
+      font-size: 20px; }
+      main section #tryit #tryit_btn:hover {
+        background: #33c; }
+    main section #tryit #comm {
+      font-size: 14px;
+      margin-top: 24px; }
+  main section #mac_img {
+    text-align: center; }
+  main #offer {
+    text-align: center;
+    padding: 20px 300px;
+    background: #fff;
+    color: #333; }
+    main #offer #of_desc {
+      font-size: 21px;
+      margin: 20px 0; }
+    main #offer #of_list {
+      display: grid;
+      grid-template-columns: 50% 50%; }
+      main #offer #of_list #of_month {
+        border-right: 1px #eee solid; }
+      main #offer #of_list #of_self {
+        border-left: 1px #eee solid; }
+      main #offer #of_list h1 {
+        font-size: 20px; }
+      main #offer #of_list img {
+        height: 94px; }
+      main #offer #of_list p {
+        line-height: 10px;
+        font-size: 18px; }
+      main #offer #of_list a {
+        text-decoration: none;
+        color: #fff;
+        padding: 4px 15px;
+        background: #37f;
+        border: solid 1px #000;
+        border-radius: 5px;
+        font-size: 16px; }
+        main #offer #of_list a:hover {
+          background: #33c; }
+      main #offer #of_list p + p + p {
+        padding-bottom: 30px; }
+      main #offer #of_list a + p {
+        margin-top: 30px;
+        font-size: 18px;
+        font-style: italic; }
+  main #who {
+    text-align: center;
+    color: #333;
+    padding-bottom: 20px; }
+    main #who #art_who {
+      font-size: 22px;
+      padding: 20px 300px; }
+      main #who #art_who h1 {
+        font-size: 28px; }
+    main #who img {
+      width: 80%; }
+  main #sform {
+    background: #fff;
+    color: #333;
+    padding: 20px 300px 90px;
+    text-align: center; }
+    main #sform h1 + p {
+      padding: 0 160px; }
+    main #sform form {
+      color: #111;
+      text-align: left;
+      background: #EAEEF1;
+      width: 50%;
+      margin: 0 auto;
+      border: solid #666 1px;
+      border-radius: 5px;
+      padding: 30px 50px; }
+      main #sform form form label {
+        font-weight: bold; }
+      main #sform form input[type=text] {
+        width: 100%;
+        padding: 8px 10px;
+        margin-bottom: 14px;
+        display: inline-block;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box; }
+      main #sform form input[type=submit] {
+        color: #fff;
+        padding: 5px 10px;
+        background: #37f;
+        border: solid 1px #000;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin: 15px 0 8px 0; }
+        main #sform form input[type=submit]:hover {
+          background: #33C; }
+      main #sform form p,
+      main #sform form #submit {
+        text-align: center; }
+    main #sform a,
+    main #sform form + p {
+      color: #666; }
+    main #sform form + p {
+      padding: 0;
+      margin: 30px 0 0 0px; }
+    main #sform a {
+      padding: 0;
+      margin: 0;
+      font-size: 14px; }
+
+footer {
+  padding: 50px 100px;
+  background: #404656; }
+  footer #fmenu {
+    display: grid;
+    grid-template-columns: 16.6666666667% 16.6666666667% 16.6666666667% 16.6666666667% 16.6666666667% 16.6666666667%; }
+    footer #fmenu ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none; }
+      footer #fmenu ul li:first-child {
+        color: #aaa;
+        padding-bottom: 5px; }
+      footer #fmenu ul a {
+        text-decoration: none;
+        color: #fff; }
+        footer #fmenu ul a:hover {
+          color: #aaa; }
+  footer #social {
+    text-align: center;
+    margin: 30px 0 0 0;
+    padding: 0; }
+    footer #social img {
+      height: 40px; }
+    footer #social a:hover {
+      -webkit-filter: invert(0.8);
+      filter: invert(0.8); }
+    footer #social p {
+      font-size: 15px;
+      color: #aaa;
+      margin: 0;
+      padding: 0; }
+    footer #social a + p {
+      margin-top: 30px; }
+
+/*# sourceMappingURL=style.css.map */

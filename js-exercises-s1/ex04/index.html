@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Ex04 S1</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+</head>
+<body>
+<form>
+    <label for="nom">Nom : </label><input type="text" name="nom" id="nom"/>
+    <label for="prenom">Prénom : </label><input type="text" name="prenom" id="prenom"/>
+    <label for="ville">Ville : </label><input type="text" name="ville" id="ville"/>
+    <button  name="valider" id="valider">Valider</button>
+</form>
+<script>
+    document.getElementById("valider").onclick = function() {afficher()};
+    function afficher(){
+        nom = document.getElementById("nom").value;
+        prenom = document.getElementById("prenom").value;
+        ville = document.getElementById("ville").value;
+        window.alert("Nom : "+nom+"\nPrénom : "+prenom+"\nVille : "+ville);
+    }
+</script>
+</body>
+</html>

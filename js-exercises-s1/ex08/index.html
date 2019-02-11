@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Ex08 S1</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+</head>
+<body>
+<form>
+    <label for="age">Votre âge : </label><input type="text" id="age" name="age"/><br/>
+    <button id="valider" name="valider">Valider</button>
+</form>
+<script>
+    document.getElementById("valider").onclick = function() {majeur()};
+    function majeur(){
+        x = document.getElementById("age").value;
+        if (x>=18){
+            window.alert("Vous êtes majeur");
+        } else {
+            window.alert("Vous êtes mineur");
+        }  
+    }   
+</script>
+</body>
+</html>

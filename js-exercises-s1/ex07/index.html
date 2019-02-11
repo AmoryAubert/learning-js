@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Ex07 S1</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+</head>
+<body>
+<form>
+    <label for="pointure">Pointure : </label><input type="text" id="pointure" name="pointure"/><br/>
+    <label for="annee">Année de naissance : </label><input type="text" id="annee" name="annee"/><br/>
+    <button id="valider" name="valider">Valider</button>
+</form>
+<script>
+    document.getElementById("valider").onclick = function() {valider()};
+    function valider(){
+        pointure = Number(document.getElementById("pointure").value);
+        annee = Number(document.getElementById("annee").value);
+        pointure += pointure;
+        console.log(pointure);
+        resultat = pointure + 5;
+        console.log(resultat);
+        resultat *=  50;
+        console.log(resultat);
+        resultat -= annee;
+        console.log(resultat);
+        resultat +=  1766;
+        window.alert(resultat);
+    }
+    
+</script>
+<!--
+Multiplier la pointure par 2
+Ajouter 5 au résultat
+Multiplier le tout par 50
+Soustraire l’année de naissance
+Ajouter au tout 1766
+-->
+</body>
+</html>
