@@ -1,0 +1,54 @@
+/*
+*  a=b++;
+*  a=++b;
+*  a=b--;
+*  a=--b;
+*  a+=b++;
+*  a=1; a+=++b;
+*  a=1; a-=b++;
+*  a=1; a-=++b;
+*  a=1; a+=b--;
+*  a=1; a+=--b;
+*/
+document.getElementById("afficher").onclick = function() {afficher()};
+function afficher(){
+    var a=0,b=2;
+    a=b++;
+    window.alert("a=b++  a="+a+" | b="+b);
+    a=0;
+    b=2;
+    a=++b;
+    window.alert("a=++b  a="+a+" | b="+b);
+    a=0;
+    b=2;
+    a=b--;
+    window.alert("a=b--  a="+a+" | b="+b);
+    a=0;
+    b=2;
+    a=--b;
+    window.alert("a=--b  a="+a+" | b="+b);
+    a=0;
+    b=2;
+    a+=b++;
+    window.alert("a+=b++  a="+a+" | b="+b);
+    a=1;
+    b=2;
+    a+=++b;
+    window.alert("a+=++b  a="+a+" | b="+b);
+    a=1;
+    b=2;
+    a-=b++;
+    window.alert("a-=b++  a="+a+" | b="+b);
+    a=1;
+    b=2;
+    a-=++b;
+    window.alert("a-=++b  a="+a+" | b="+b);
+    a=1;
+    b=2;
+    a+=b--;
+    window.alert("a+=b--  a="+a+" | b="+b);
+    a=1;
+    b=2;
+    a+=--b;
+    window.alert("a+=--b  a="+a+" | b="+b);
+}
