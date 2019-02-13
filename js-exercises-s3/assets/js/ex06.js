@@ -1,15 +1,15 @@
-document.getElementById("afficher").onclick = function() {afficher()};
-let tab = [-2,1,4];
-
-function soustrait(x){
-    if (x>=2) {
-        return alert(x - 2);
+y = document.querySelectorAll("img");
+x=0;
+for (let i=0 ; i<y.length; i++){
+    y[i].addEventListener("mouseover", changeImage);
+    y[i].addEventListener("mouseout", changeImage);
+    function changeImage() {
+        if (x===0){
+            y[i].setAttribute("src", `assets/img/image${i+1}_2.jpg`);
+            x=1;
+        } else {
+            y[i].setAttribute("src", `assets/img/image${i+1}.jpg`);
+            x=0;
+        }
     }
-    else {
-        return alert("Nombre négatif !");
-    }
-}
-function afficher(){
-    soustrait(tab[0]);
-    soustrait(tab[2]);
 }
