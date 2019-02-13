@@ -1,5 +1,5 @@
 document.getElementById("afficher").onclick = function() {afficher()};
-var tab = [-2,1,4];
+let tab = [-2,1,4];
 function additionner(x){
     return x+=2;
 }

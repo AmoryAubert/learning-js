@@ -1,6 +1,6 @@
 document.getElementById("jour").onclick = function() {jourDeLaSemaine()};
 function jourDeLaSemaine(){
-    var jour;
+    let jour;
     switch (new Date().getDay()) {
       case 0:
         jour = "Dimanche";
