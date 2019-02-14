@@ -1,7 +1,7 @@
-y = document.querySelectorAll("img");
-x=0;
+let y = document.querySelectorAll("img");
+let x=0;
 for (let i=0 ; i<y.length; i++){
-    y[i].addEventListener("mouseover", changeImage);
+    y[i].addEventListener("mouseenter", changeImage);
     y[i].addEventListener("mouseout", changeImage);
     function changeImage() {
         if (x===0){
