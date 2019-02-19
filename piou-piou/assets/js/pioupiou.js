@@ -62,14 +62,18 @@ let space;
 let cible=0;
 for (let i=0;i < invaderDial.length; i++){
     let space2="";
-    space=(54- (invaderDial[i].length))/2;
+    space=(100 - (invaderDial[i].length))/2;
     for (let j = 0;j < space;j++){
         space2+=" ";
     }
     invaderDial[i]=space2+invaderDial[i]+space2;
 }
 function leScore(){
-    document.getElementById("leScore").innerHTML = '<p>Vous avez touché '+cible+' cibles & avez accumulé un score de '+valscore+' point(s) en '+secondes+','+csecondes+' secondes.</p><button onclick="rejouer()">Rejouer</button>';
+    if (minutes > 0){
+           document.getElementById("leScore").innerHTML = '<p>Vous avez touché '+cible+' cibles & avez accumulé un score de '+valscore+' point(s) en '+minutes+' minute(s) et '+secondes+','+csecondes+' secondes.</p><button onclick="rejouer()">Rejouer</button>'; 
+    } else {
+        document.getElementById("leScore").innerHTML = '<p>Vous avez touché '+cible+' cibles & avez accumulé un score de '+valscore+' point(s) en '+secondes+','+csecondes+' secondes.</p><button onclick="rejouer()">Rejouer</button>';
+    }
 }
 function rejouer() {
     document.getElementById("filtre").style.display = "none";
@@ -204,6 +208,8 @@ function component(width, height, color, x, y, type) {
 }
 let vitesseInvader=0;
 let pastouche=0;
+let topi;
+let boti;
 function updateGameArea() {
     myGameArea.clear();
     let x = myGameArea.canvas.width;
@@ -226,26 +232,23 @@ function updateGameArea() {
     }
     //https://bl.ocks.org/nanu146/aa0e4f8428bc65a8c648cf0ddefc84d4
     if (cible > 0){
-        if (invader.y > 71) {
-            top=1;
-            bot=0;
+        if (invader.speed < 0) {
+            topi=1;
+            boti=0;
         }
-        if (invader.y < testheight-invader.height-1) {
-            top=0;
-            bot=1;
+        if (invader.speed > 0) {
+            topi=0;
+            boti=1;
         }
-        if ((invader.y < testheight-invader.height-1)&&(invader.y > 70+1)&&(top==1)){
-            invader.speed = -vitesseInvader;
-            console.log("top");
-        } else if ((invader.y < testheight-invader.height-1)&&(invader.y > 70+1)&&(bot==1)) {
+        if ((topi==1)&&(invader.y<=71)){
             invader.speed = vitesseInvader;
-            console.log("bot");
-        }
+        } else if ((boti==1)&&(invader.y>=testheight-invader.height-1)) {
+            invader.speed = -vitesseInvader;
+        } 
         invader.newPos();
-        invader.update();
-        
+        invader.update(); 
     }
-    let vitesseBullet = 50;
+    let vitesseBullet = 15;
     if (fire == 1){
         bullettext.x += vitesseBullet;
         bullet.x += vitesseBullet;
@@ -253,9 +256,10 @@ function updateGameArea() {
         bullettext.update();
         if (bullet.crashWith(invader)) {
             let rdmh = getRndInteger(180,testheight);
-            vitesseInvader = getRndInteger(1,2);
-            //invader = new component(85,100,"./assets/img/dzena.jpg",x-85-10,(testheight - 60)/2,"image");
+            vitesseInvader = getRndInteger(1+cible,2+cible);
+            //if (vitesseInvader == 0){vitesseInvader = getRndInteger(-2-cible,2+cible);}
             invader = new component(85,100,"./assets/img/dzena.jpg",x-85-10,rdmh-100,"image");
+            invader.speed = vitesseInvader;
             valscore+=1;
             score.text="SCORE: "+valscore;
             score.update();
@@ -266,7 +270,7 @@ function updateGameArea() {
             invaderBubble.text=invaderDial[cible];
             fire = 0;
             bullet=0;
-            if (valscore==10){
+            if (cible==10){
                 myGameArea.stop();
                 document.getElementById("filtre").style.display = "block";
                 document.getElementById("leScore").style.display = "block";
@@ -292,3 +296,57 @@ function updateGameArea() {
     bubble.update();
     invaderBubble.update();
 }
+/*function degreeToRadians(value){
+	return (value/360)*2*Math.PI;
+}
+particle=
+{
+	velocity :null,
+	position : null,
+
+	/// dummy constructor
+
+	create : function(x,y,speed,angle)
+	{
+		console.log(x,y,speed,angle)
+		var obj=Object.create(this);
+		obj.velocity=vector.create(0,0);
+		
+		obj.velocity.setLength(speed);
+		obj.velocity.setAngle(angle);
+		obj.position=vector.create(x,y);
+		console.log("object")
+		console.log(obj);
+		return obj;
+	},
+
+	update: function(){
+		this.position.addTo(this.velocity);
+	}
+
+}
+vector=
+{
+	_x:0,
+	_y:0,
+
+	// dummy constructor
+	create : function(x,y){var obj= Object.create(this);obj._y=y; obj._x=x; return obj;},
+
+	// member functions
+	getX : function(){ return this._x},
+	getY : function(){ return this._y},
+	setX : function(value){  this._x=value;},
+	setY : function(value){  this._y=value;},
+	getLength : function(){ return Math.sqrt(this._x*this._x + this._y*this._y)},
+	getAngle : function(){ return Math.atan2(this._y,this._x) },
+	setAngle : function(angle){ length=this.getLength(); this._y =Math.cos(angle)*length; this._x= Math.sin(angle)*length; },
+	setLength: function(length){ angle=this.getAngle(); this._y=Math.cos(angle)*length; this._x=Math.sin(angle)*length; },
+	add : function(v2){		vect = this.create(this._x+v2._x, this._y+v2._y);	return vect;	 },
+	subtract : function(v2){	vect = this.create(this._x-v2._x, this._y-v2._y); 	return vect;	 },
+	multiply: function(value){ return vector.create(this._x*value,this._y*value)},
+	divide: function(value){ return vector.create(this._x/value,this._y/value)},
+	scale: function(value){ this._x=this._x*value; this._y=this._y*value;},
+	addTo: function(v2){ this._x=this._x+v2._x; this._y=this._y+v2._y },
+	subtractFrom: function(v2){ this._x=this._x-v2._x; this._y=this._y-v2._y }
+}*/
