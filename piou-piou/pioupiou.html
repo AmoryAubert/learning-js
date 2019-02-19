@@ -6,20 +6,34 @@
   <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
   <title>Bonus : Piou-piou</title>
   <style>
-canvas {
+body{
+  margin: 50px;
+}
+canvas{
     border:1px solid #d3d3d3;
     background-color: #f1f1f1;
 }
-p {
-  display: inline-block;
+p{
+    display: inline-block;
+}
+#leScore{
+    margin: 160px auto;
+    width: 1002px;
+    font-size: 50px;
+    text-align: center;
 }
 </style>
 </head>
 <body>
 <div>
+<h1>Le jeu du piou-piou #private-Joke</h1>
 <p><time>00:00:00</time></p>
-<button id="start">start</button>  
+<button id="start">Jouer</button>  
 </div>
+<div id="filtre" style="position:absolute;background-color:#000000;opacity:0.3;width:1002px;height:502px;display:none"></div>
+<div id="leScore" style="position:absolute;display:none;"></div>
+<div id="canvascontainer"></div>
+
 <script src="assets/js/pioupiou.js" type="text/javascript"></script>
 </body>
 </html>
