@@ -9,8 +9,17 @@
     body{
       margin: 20px 50px;
     }
+    p{
+      margin: 2px;
+    }
     input{
       display: inline-block;
+    }
+    .rouge{
+      color: red;
+    }
+    .vert{
+      color: green;
     }
 </style>
 </head>
@@ -18,7 +27,7 @@
   <h1>Le juste-prix</h1>
 <label for="estimation">Estimation : </label><input type="text" id="estimation" name="estimation"/>
 <button type="button" id="verification" name="surface">Faire une estimation</button>
-<p id="message"></p>
+<div id="message"></div>
 <script src="assets/js/justeprix.js" type="text/javascript"></script>
 </body>
 </html>

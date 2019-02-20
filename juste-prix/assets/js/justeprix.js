@@ -17,14 +17,11 @@ function justeprix(){
     message = document.getElementById("message");
     coup++;
     if (estimation > num){
-        message.style.color = "red";
-        message.innerHTML = "C'est moins que "+estimation+" !";
+        message.innerHTML += "<p class='rouge'>C'est moins que "+estimation+" !</p> ";
     } else if (estimation < num){
-        message.style.color = "red";
-        message.innerHTML = "C'est plus que "+estimation+" !";
+        message.innerHTML += "<p class='rouge'>C'est plus que "+estimation+" !</p>";
     } else {
-        message.style.color = "green";
-        message.innerHTML = "C'est juste tu as trouvé "+num+" en "+coup+" coups";
+        message.innerHTML += "<p class='vert'>C'est juste tu as trouvé "+num+" en "+coup+" coups !</p>";
     }
 }
 
