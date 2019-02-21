@@ -3,31 +3,55 @@ var selectElementsStartingWithA = function(array) {
 }
 
 var selectElementsStartingWithVowel = function(array) {
-    return 'Write your method here';
+    return array;
 }
 
 var removeNullElements = function(array) {
-    return 'Write your method here';
+    
+    return array.filter(x => x != null);
 }
 
 var removeNullAndFalseElements = function(array) {
-    return 'Write your method here';
+    
+    return array.filter(x => x === 0 || Boolean(x));
 }
 
 var reverseWordsInArray = function(array) {
-    return 'Write your method here';
+    let word="";let wordArray=[];let arrayReverse;
+    for (let i = 0 ; i < array.length; i++)
+    {
+        word = array[i].toString();
+        arrayReverse = word.split("").reverse();
+        wordArray[i] = arrayReverse.toString().replace(/,/g,"");
+    }
+    return wordArray;
 }
 
 var everyPossiblePair = function(array) {
-    return 'Write your method here';
+    Array.prototype.pairs = function (func) {
+    for (var i = 0; i < this.length - 1; i++) {
+        for (var j = i; j < this.length - 1; j++) {
+            func([this[i], this[j+1]]);
+        }
+    }
+}
+let newArray=[];
+array.sort().pairs(function(array){
+    newArray.concat(array);
+    newArray += array;
+    console.log(array);
+});
+    return newArray;
 }
 
 var allElementsExceptFirstThree = function(array) {
-    return 'Write your method here';
+    return array.slice(3,array.length);
 }
 
 var addElementToBeginning = function(array, element) {
-    return 'Write your method here';
+    array = array.reverse();
+    array[array.length]=element;
+    return array.reverse();
 }
 
 var sortByLastLetter = function(array) {
@@ -75,11 +99,25 @@ var getElementsUntilGreaterThanFive = function(array) {
 }
 
 var convertArrayToObject = function(array) {
-    return 'Write your method here';
+    let obj = {};
+    for (let i = 0; i < array.length; i+=2) {
+          obj[array[i]]=array[i+1];
+        }    
+    return obj;
 }
 
 var getAllLetters = function(array) {
-    return 'Write your method here';
+    function cleanArray(array) {
+        let out = [], obj = {};
+        for (let i = 0; i < array.length; i++) {
+          obj[array[i]] = 0;
+        }
+        for (let j in obj) {
+          out.push(j);
+        }
+        return out;
+      }
+    return cleanArray(array).toString().replace(/,/g,"").split("").sort();
 }
 
 var swapKeysAndValues = function(object) {
@@ -103,7 +141,7 @@ var formatDateNicely = function(date) {
 }
 
 var getDomainName = function(string) {
-    return 'Write your method here';
+    return string;
 }
 
 var titleize = function(string) {
@@ -111,7 +149,17 @@ var titleize = function(string) {
 }
 
 var checkForSpecialCharacters = function(string) {
-    return 'Write your method here';
+    let good="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz0123456789";
+    let goodArray=good.split("");
+    let stringArray=string.split("");
+    let result;
+    for (let i = 0; i < goodArray.length; i++){
+        for (let j = 0; j < stringArray.length; j++){
+            result = (stringArray[j].includes(goodArray[i]));
+        }
+        if (result == true){return false}
+    }
+    return true;
 }
 
 var squareRoot = function(number) {
@@ -119,7 +167,11 @@ var squareRoot = function(number) {
 }
 
 var factorial = function(number) {
-    return 'Write your method here';
+    let factNumber=1;
+    for (let i = 1; i < number+1 ; i++){
+        factNumber = factNumber*i;
+    }
+    return factNumber;
 }
 
 var findAnagrams = function(string) {
@@ -127,9 +179,17 @@ var findAnagrams = function(string) {
 }
 
 var convertToCelsius = function(number) {
-    return 'Write your method here';
+    //(°F − 32) × 5/9
+    return Math.round((number -32)*(5/9));
 }
 
 var letterPosition = function(array) {
-    return 'Write your method here';
+    let newArray=[];
+    for (let i = 0 ; i < array.length;i++){
+        newArray[i]= (array[i].charCodeAt())-64;
+        if (newArray[i] > 26){
+            newArray[i]-= 32;
+        }
+    }
+    return newArray;
 }

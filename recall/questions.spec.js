@@ -179,9 +179,13 @@ describe('javascript-Recall', function() {
     it('checks a string for special characters', function() {
         var resultOne = checkForSpecialCharacters('ABCdef123');
         var resultTwo = checkForSpecialCharacters('ABC@dsklfj!');
-
+        //var resultThree = checkForSpecialCharacters('bonJour.MonsUYer007K0/\/\/\/eNt§çà');
+        //var resultFour = checkForSpecialCharacters('CouCou 007');
+        
         expect(resultOne).toBe(false);
         expect(resultTwo).toBe(true);
+        //expect(resultThree).toBe(true);
+        //expect(resultFour).toBe(false);
     });
 
     it('finds the square root of a number', function() {
