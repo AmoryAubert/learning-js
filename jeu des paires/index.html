@@ -4,39 +4,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
-  <title>Bonus : Piou-piou</title>
-  <style>
+  <title>jeu des paires</title>
+<style>
 body{
   margin: 5px 30px;
 }
 h1{
   margin:0;
 }
-canvas{
-    border:1px solid #d3d3d3;
-    background-color: #f1f1f1;
-}
 p{
-    display: inline-block;
+  display: inline-block;
 }
-#leScore{
-    margin: 140px auto;
-    width: 1002px;
-    font-size: 50px;
-    text-align: center;
+#gameArea{
+  display: flex;
+  flex-wrap: wrap;
+  width: 1248px;
+}
+img{
+  user-drag: none; 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 </style>
 </head>
 <body>
 <div>
-<h1>Le jeu du piou-piou #private-Joke</h1>
-<p><time>00:00:00</time></p>
-<button id="start">Jouer</button>  
+  <h1>Le jeu des paires</h1>
+  <p><time>00:00:00</time></p>
+  <button id="start">Jouer</button>  
 </div>
-<div id="filtre" style="position:absolute;background-color:#000000;opacity:0.3;width:1002px;height:502px;display:none"></div>
-<div id="leScore" style="position:absolute;display:none;"></div>
-<div id="canvascontainer"></div>
-
-<script src="assets/js/pioupiou.js" type="text/javascript"></script>
+<div id="gameArea"></div>
+<script src="assets/js/script.js" type="text/javascript"></script>
 </body>
 </html>
