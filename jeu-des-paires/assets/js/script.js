@@ -58,7 +58,7 @@ function play(){
     ga.style.width = gaWidth+"px";
     ga.innerHTML = "";
     for (let i = 1; i <= numCard; i++){
-        ga.innerHTML += `<img src="assets/img/versocard.png" id="c${i}" />`;
+        ga.innerHTML += `<img src="assets/img/pversocard.png" id="c${i}" />`;
         cardDispo[i-1]=i;
     }
     for (let i=0;i<numCard;i++){
@@ -75,10 +75,10 @@ function play(){
     function update(position){
             switch(front[position]){
               case 0:
-                      document.getElementById(`c${position+1}`).src="assets/img/versocard.png";
+                      document.getElementById(`c${position+1}`).src="assets/img/pversocard.png";
                       break;
               case 1:
-                      document.getElementById(`c${position+1}`).src="assets/img/"+cardDispo[position]+".png";
+                      document.getElementById(`c${position+1}`).src="assets/img/p"+cardDispo[position]+".png";
                       break;
               case -1:
                       document.getElementById(`c${position+1}`).src="assets/img/vide.png";
