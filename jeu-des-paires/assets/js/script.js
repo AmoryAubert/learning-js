@@ -68,8 +68,7 @@ function play(){
     }   
     for (let i=0; i < numCard; i++){
         document.getElementById(`c${i+1}`).position=i;
-        document.getElementById(`c${i+1}`).addEventListener("click", function(){ check(this.position)}, false);
-        //document.getElementById(`c${i+1}`).addEventListener("click", function(){ setTimeout(function(){ check(document.getElementById(`c${i+1}`).position); console.log(document.getElementById(`c${i+1}`).position); },600)},false);
+        document.getElementById(`c${i+1}`).addEventListener("mousedown", function(event){ check(this.position);}, false);
         cardDispo[i]=Math.round(shuffle[i]/2);
         front[i]=0;
     }
@@ -97,7 +96,12 @@ function play(){
                     break;
           }
     }
+    let lastClick = 0;
+    let delay = 200;
     function check(position){
+         if (lastClick >= (Date.now() - delay))
+            return;
+        lastClick = Date.now();
         if(flippedCard.length<2){
             if(front[position]==0){
                 front[position]=1;
@@ -119,12 +123,12 @@ function play(){
                     if((numPair==(numCard/2))&&(cardDispo[flippedCard[0]]==cardDispo[flippedCard[1]])){
                         stopchrono();
                     }
-                    front[flippedCard[0]]=state;
-                    front[flippedCard[1]]=state;
                     setTimeout(function(){
                         flip(flippedCard[0]);
                         flip(flippedCard[1]);
                     },300);
+                    front[flippedCard[0]]=state;
+                    front[flippedCard[1]]=state;
                     setTimeout(function(){
                         update(flippedCard[0]);
                         update(flippedCard[1]);
