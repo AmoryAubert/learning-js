@@ -68,21 +68,22 @@ function play(){
     }   
     for (let i=0; i < numCard; i++){
         document.getElementById(`c${i+1}`).position=i;
-        document.getElementById(`c${i+1}`).addEventListener("click", function(){ check(this.position)}, true);
+        document.getElementById(`c${i+1}`).addEventListener("click", function(){ check(this.position)}, false);
+        //document.getElementById(`c${i+1}`).addEventListener("click", function(){ setTimeout(function(){ check(document.getElementById(`c${i+1}`).position); console.log(document.getElementById(`c${i+1}`).position); },600)},false);
         cardDispo[i]=Math.round(shuffle[i]/2);
         front[i]=0;
     }
     function update(position){
-          switch(front[position]){
-            case 0:
-                    document.getElementById(`c${position+1}`).src="assets/img/versocard.png";
-                    break;
-            case 1:
-                    document.getElementById(`c${position+1}`).src="assets/img/"+cardDispo[position]+".png";
-                    break;
-            case -1:
-                    document.getElementById(`c${position+1}`).src="assets/img/vide.png";
-          }
+            switch(front[position]){
+              case 0:
+                      document.getElementById(`c${position+1}`).src="assets/img/versocard.png";
+                      break;
+              case 1:
+                      document.getElementById(`c${position+1}`).src="assets/img/"+cardDispo[position]+".png";
+                      break;
+              case -1:
+                      document.getElementById(`c${position+1}`).src="assets/img/vide.png";
+            }
     }
     function flip(position){
           switch(front[position]){
@@ -115,6 +116,9 @@ function play(){
                         state=-1;
                         numPair++;
                     }
+                    if((numPair==(numCard/2))&&(cardDispo[flippedCard[0]]==cardDispo[flippedCard[1]])){
+                        stopchrono();
+                    }
                     front[flippedCard[0]]=state;
                     front[flippedCard[1]]=state;
                     setTimeout(function(){
@@ -134,7 +138,6 @@ function play(){
         }
     }
     function restart(){
-        stopchrono();
         ga.style.width = "520px";
         ga.style.display ="block";
         ga.innerHTML="Vous avez gagnez !!!";
