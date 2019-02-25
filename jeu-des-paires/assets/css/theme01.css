@@ -1,0 +1,7 @@
+body{
+  background: #785384;
+}
+h1{
+  color: #425da4;
+  text-shadow: -1px 0 #eee, 0 1px #eee, 1px 0 #eee, 0 -1px #eee;
+}

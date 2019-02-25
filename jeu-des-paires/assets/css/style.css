@@ -1,0 +1,95 @@
+body{
+  font-size: 20px;
+  color: #eee;
+  user-drag: none; 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+#wrap{
+  margin: 10px 0;
+  text-align: center;
+}
+h1{
+  margin:0;
+}
+#time,#nbC{
+  display: inline-block;
+}
+#gameArea{
+  flex-wrap: wrap;
+  font-size: 50px;
+  margin: 0 auto;
+  background: #ddd;
+  border-radius: 30px;
+  color: #425da4;
+}
+img{
+  user-drag: none; 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+  transition: transform 0.6s;
+}
+.flipped {
+  -webkit-transform: rotateY( 0deg );
+  -moz-transform: rotateY( 0deg );
+  -o-transform: rotateY( 0deg );
+  transform: rotateY( 0deg );
+}
+input{
+  width: 40px;
+  text-align: center;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
+}
+#start{
+  margin-right: 20px;
+}
+#message{
+  margin: 0;
+  padding: 0;
+}
+#option{
+  position: absolute;
+  margin: 20px 0 0 100px;
+  width: 200px;
+  text-align: left;
+}
+legend{
+  text-align: left;
+}
+fieldset{
+  border-radius: 5px;
+}
+#nbC{
+  background: url("../img/cards.png") no-repeat;
+  line-height: 34px;
+  margin: 0;
+}
+#nbCarte{
+  margin-left: 70px;
+}
+#ff,#pk{
+  width: 20px;
+  height: 20px;
+  border: 2px #fff solid;
+  display: inline-block;
+  margin-right: 10px;
+}
+#ff{
+  background-color: #785384;
+}
+#pk{
+  background-color: #4848fc;
+}

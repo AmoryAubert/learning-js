@@ -1,5 +1,41 @@
+//load all image
+function preloadImg(){
+    let preload = [];
+    for (let i = 1; i <= 18; i++){
+        preload[i-1]="assets/img/"+i+".png";
+    }
+    for (let i = 19; i <= 18+18; i++){
+        preload[i-1]="assets/img/p"+(i-18)+".png";
+    }
+    preload[preload.length]="assets/img/versocard.png";
+    preload[preload.length]="assets/img/pversocard.png";
+    for(let i = 0; i < preload.length; i++) 
+    {
+        let imageObject = new Image();
+        imageObject.src = preload[i];
+        console.log(imageObject);
+    }
+}
+//theme
+let styleSheet = document.getElementsByTagName('link')[2],
+    ff = document.getElementById("ff"),
+    pk = document.getElementById("pk"),
+    theme = "f";
+ff.addEventListener("click", changeTheme);
+pk.addEventListener("click", changeTheme);
+console.log(styleSheet);
+function changeTheme(){
+    if (theme=="f"){
+        styleSheet.href = "assets/css/theme02.css";
+        theme= "p";
+    } else {
+        styleSheet.href = "assets/css/theme01.css";
+        theme= "f";
+    }
+}
+
 //chrono
-let chrono = document.getElementsByTagName('p')[0],
+let chrono = document.getElementById("time"),
     csecondes = 0,secondes = 0, minutes = 0,
     t;
 function add() {
@@ -13,7 +49,6 @@ function add() {
         }
     }  
     chrono.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (secondes ? (secondes > 9 ? secondes : "0" + secondes) : "00") + ":" + (csecondes > 9 ? csecondes : "0" + csecondes);
-
     timer();
 }
 function timer() {
@@ -31,12 +66,14 @@ function numAlea() {
 }
 //bouton
 let nbCarte=document.getElementById("nbCarte"),
+    option=document.getElementById("option"),
     start = document.getElementById('start');
 start.addEventListener("click", play);
 //jeu des paires
 function play(){
     clearchrono();
     timer();
+    option.style.display= "none";
     start.disabled = true;
     nbCarte.disabled = true;
     let numCard = nbCarte.value,
@@ -58,7 +95,7 @@ function play(){
     ga.style.width = gaWidth+"px";
     ga.innerHTML = "";
     for (let i = 1; i <= numCard; i++){
-        ga.innerHTML += `<img src="assets/img/versocard.png" id="c${i}" />`;
+        ga.innerHTML += `<img src="assets/img/${theme}versocard.png" id="c${i}" />`;
         cardDispo[i-1]=i;
     }
     for (let i=0;i<numCard;i++){
@@ -75,10 +112,10 @@ function play(){
     function update(position){
             switch(front[position]){
               case 0:
-                      document.getElementById(`c${position+1}`).src="assets/img/versocard.png";
+                      document.getElementById(`c${position+1}`).src=`assets/img/${theme}versocard.png`;
                       break;
               case 1:
-                      document.getElementById(`c${position+1}`).src="assets/img/"+cardDispo[position]+".png";
+                      document.getElementById(`c${position+1}`).src=`assets/img/${theme}`+cardDispo[position]+`.png`;
                       break;
               case -1:
                       document.getElementById(`c${position+1}`).src="assets/img/vide.png";
@@ -144,8 +181,9 @@ function play(){
     function restart(){
         ga.style.width = "520px";
         ga.style.display ="block";
-        ga.innerHTML="Vous avez gagnez !!!";
+        ga.innerHTML='<p id="message">Vous avez gagnez !!!</p>';
         start.textContent="Rejouer";
+        option.style.display= "block";
         start.disabled=false;
         nbCarte.disabled=false;
     }

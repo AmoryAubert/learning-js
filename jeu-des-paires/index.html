@@ -4,81 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <title>jeu des paires</title>
-<style>
-body{
-  background: #785384;
-  font-size: 20px;
-  color: #eee;
-  user-drag: none; 
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
-#wrap{
-  margin: 10px 0;
-  text-align: center;
-}
-h1{
-  margin:0;
-  color: #425da4;
-  text-shadow: -1px 0 #eee, 0 1px #eee, 1px 0 #eee, 0 -1px #eee;
-}
-p{
-  display: inline-block;
-}
-#gameArea{
-  flex-wrap: wrap;
-  font-size: 50px;
-  margin: 0 auto;
-  background: #ddd;
-  border-radius: 30px;
-  color: #425da4;
-}
-img{
-  user-drag: none; 
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  -webkit-transform: rotateY( 180deg );
-  -moz-transform: rotateY( 180deg );
-  -o-transform: rotateY( 180deg );
-  transform: rotateY( 180deg );
-  transition: transform 0.6s;
-}
-.flipped {
-  -webkit-transform: rotateY( 0deg );
-  -moz-transform: rotateY( 0deg );
-  -o-transform: rotateY( 0deg );
-  transform: rotateY( 0deg );
-}
-input{
-  width: 40px;
-  text-align: center;
-}
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button {  
-   opacity: 1;
-}
-#start{
-  margin-right: 20px;
-}
-</style>
 </head>
-<body>
+<body onload="preloadImg()">
+<link rel="stylesheet" type="text/css" href="assets/css/theme01.css">
 <div id="wrap">
+  <form id="option">
+    <fieldset>
+        <legend>Option</legend>
+        <p id="nbC"><input type="number" name="nbCarte" id="nbCarte" min="10" max="36" step="2" value="20" onkeydown="return false"></p>
+        <div><p id="ff"></p><p id="pk"></p></div>
+    </fieldset>
+  </form>
   <div>
     <h1>Le jeu des paires</h1>
-    <p><time>00:00:00</time></p>
+    <p id="time"><time>00:00:00</time></p>
     <button id="start">Jouer</button>
-    <p>Nombre de cartes: <input type="number" name="nbCarte" id="nbCarte" min="10" max="36" step="2" value="20" autofocus="autofocus"></p>
   </div>
   <div id="gameArea"></div>
-</div>
 <script src="assets/js/script.js" type="text/javascript"></script>
 </body>
 </html>
