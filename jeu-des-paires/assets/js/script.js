@@ -2,18 +2,17 @@
 function preloadImg(){
     let preload = [];
     for (let i = 1; i <= 18; i++){
-        preload[i-1]="assets/img/"+i+".png";
+        preload[i-1]="assets/img/f"+i+".png";
     }
     for (let i = 19; i <= 18+18; i++){
         preload[i-1]="assets/img/p"+(i-18)+".png";
     }
-    preload[preload.length]="assets/img/versocard.png";
+    preload[preload.length]="assets/img/fversocard.png";
     preload[preload.length]="assets/img/pversocard.png";
     for(let i = 0; i < preload.length; i++) 
     {
         let imageObject = new Image();
         imageObject.src = preload[i];
-        console.log(imageObject);
     }
 }
 //theme
@@ -21,17 +20,15 @@ let styleSheet = document.getElementsByTagName('link')[2],
     ff = document.getElementById("ff"),
     pk = document.getElementById("pk"),
     theme = "f";
-ff.addEventListener("click", changeTheme);
-pk.addEventListener("click", changeTheme);
-console.log(styleSheet);
-function changeTheme(){
-    if (theme=="f"){
-        styleSheet.href = "assets/css/theme02.css";
-        theme= "p";
-    } else {
+ff.addEventListener("mousedown", changeTheme1);
+pk.addEventListener("mousedown", changeTheme2);
+function changeTheme1(){
         styleSheet.href = "assets/css/theme01.css";
         theme= "f";
-    }
+}
+function changeTheme2(){
+        styleSheet.href = "assets/css/theme02.css";
+        theme= "p";
 }
 
 //chrono
