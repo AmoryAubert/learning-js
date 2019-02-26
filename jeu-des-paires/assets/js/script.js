@@ -30,11 +30,16 @@ function changeTheme2(){
         styleSheet.href = "assets/css/theme02.css";
         theme= "p";
 }
-
 //chrono
 let chrono = document.getElementById("time"),
-    csecondes = 0,secondes = 0, minutes = 0,
     t;
+let bSw = 0;
+let csecondes, secondes, minutes;
+if(bSw==0){
+        csecondes = 30000;secondes = 0;minutes = 0;
+} else {
+        csecondes = 0;secondes = 0;minutes = 0;
+}
 function add() {
     csecondes++;
     if (csecondes >= 100) {
@@ -49,7 +54,12 @@ function add() {
     timer();
 }
 function timer() {
-    t = setTimeout(add, 9);
+    if(bSw==0){
+        t = setTimeout(add, 100);    
+    }
+    if(bSw==1){ 
+        t = setTimeout(remove, 9);    
+    }
 }
 function clearchrono() {
     chrono.textContent = "00:00:00";
@@ -58,17 +68,61 @@ function clearchrono() {
 function stopchrono(){
     clearTimeout(t);
 }
+//chrono inverse
+function remove() {
+    csecondes--;
+    //if (csecondes <= 100) {
+    //    secondes--;
+    //    if (secondes <= 60) {
+    //        minutes--;
+    //    }
+    //}  
+    //chrono.textContent = (minutes ? (minutes < -9 ? minutes : "0" + minutes) : "00") + ":" + (secondes ? (secondes < -9 ? secondes : "0" + secondes) : "00") + ":" + (csecondes < -9 ? csecondes : "0" + csecondes);
+    chrono.textContent = csecondes;
+    timer();
+}
+//fonction random 
 function numAlea() {
     return (Math.random()*2 & 1)?-1:1;
 }
 //bouton
 let nbCarte=document.getElementById("nbCarte"),
     option=document.getElementById("option"),
+    switchOnOff1=document.getElementById("radio-c"),
+    switchOnOff2=document.getElementById("radio-d"),
     start = document.getElementById('start');
+    //csecondes = 0,secondes = 0, minutes = 0,
+    
 start.addEventListener("click", play);
+switchOnOff1.addEventListener("click", onOff);
+switchOnOff2.addEventListener("click", onOff);
+function onOff(){
+    if(bSw==0){
+        document.getElementById("onOff").innerHTML='<span class="toggle-inside"></span>ON';
+        document.getElementsByClassName("toggle-inside")[0].style.marginLeft="-9px";
+        document.getElementsByClassName("toggle-inside")[0].style.backgroundColor="#222";
+        document.getElementById("onOff").style.paddingTop="0rem";
+        document.getElementById("onOff").style.paddingBottom="0.6rem";
+        document.getElementById("onOff").style.backgroundColor="#eee";
+        document.getElementById("onOff").style.color="#222";
+        chrono.textContent = "00:30:00";
+        let csecondes = 30000,secondes = 0, minutes = 0;
+        bSw=1;
+    } else {
+        document.getElementById("onOff").innerHTML='<span class="toggle-inside"></span>OFF';
+        document.getElementsByClassName("toggle-inside")[0].style.backgroundColor="#eee";
+        document.getElementById("onOff").style.paddingTop="0.6rem";
+        document.getElementById("onOff").style.paddingBottom="0rem";
+        document.getElementById("onOff").style.backgroundColor="#222";
+        document.getElementById("onOff").style.color="#eee";
+        chrono.textContent = "00:00:00";
+        let csecondes = 0,secondes = 0, minutes = 0;
+        bSw=0;
+    }
+}
 //jeu des paires
 function play(){
-    clearchrono();
+    //clearchrono();
     timer();
     option.style.display= "none";
     start.disabled = true;
@@ -172,7 +226,7 @@ function play(){
                         }
                     },500);
                 }
-            },300);
+            },250);
         }
     }
     function restart(){

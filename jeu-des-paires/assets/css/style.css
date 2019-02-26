@@ -15,8 +15,17 @@ body{
 h1{
   margin:0;
 }
+p{
+  margin:10px 0;
+}
 #time,#nbC{
   display: inline-block;
+}
+#cm, .switch{
+  display: inline-flex;
+}
+#cm{
+  margin-right: 5px;
 }
 #gameArea{
   flex-wrap: wrap;
@@ -45,7 +54,7 @@ img{
   -o-transform: rotateY( 0deg );
   transform: rotateY( 0deg );
 }
-input{
+input[type=number]{
   width: 40px;
   text-align: center;
 }
@@ -62,8 +71,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #option{
   position: absolute;
-  margin: 20px 0 0 100px;
-  width: 200px;
+  margin: 60px 0 0 200px;
+  width: 260px;
   text-align: left;
 }
 legend{
@@ -92,4 +101,93 @@ fieldset{
 }
 #pk{
   background-color: #4848fc;
+}
+/*SWITCH*ON*OFF*/
+.switch {
+  position: relative;
+}
+.switch input {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+}
+.switch input:checked {
+  z-index: 1;
+}
+.switch input:checked + label {
+  opacity: 1;
+  cursor: default;
+}
+.switch input:not(:checked) + label:hover {
+  opacity: 0.5;
+}
+.switch label {
+  color: #fff;
+  opacity: 0.33;
+  transition: opacity 0.25s ease;
+  cursor: pointer;
+}
+.switch .toggle-outside {
+  height: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: 0.25s ease all;
+}
+.switch .toggle-inside {
+  border-radius: 2px;
+  width: 100%;
+  position: absolute;
+  transition: 0.25s ease all;
+}
+.toggle-outside{
+  padding-top: 0.6rem;
+  text-align: center;
+  background-color: #222;
+  color: #eee;
+}
+.toggle-inside{
+  margin-left: -5px;
+}
+.switch--vertical {
+  width: 3rem;
+  height: 1.4rem;
+}
+.switch--vertical input {
+  height: 2.6rem;
+  width: 3rem;
+  left: 0;
+  margin: 0;
+}
+.switch--vertical label {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  display: block;
+  width: 3rem;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+}
+.switch--vertical .toggle-outside {
+  background: #fff;
+  color: #000;
+  position: absolute;
+  width: 3rem;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #222;
+  color: #eee;
+}
+.switch--vertical .toggle-inside {
+  height: 0.7rem;
+  width: 3rem;
+  background-color: #fff;
+}
+.switch--vertical input:checked ~ .toggle-outside .toggle-inside {
+  top: 0.05rem;
+}
+.switch--vertical input ~ input:checked ~ .toggle-outside .toggle-inside {
+  top: 1.3rem;
 }
