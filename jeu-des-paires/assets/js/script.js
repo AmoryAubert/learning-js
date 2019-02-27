@@ -1,3 +1,4 @@
+let x,y,z;
 //load all image
 function preloadImg(){
     let preload = [];
@@ -65,6 +66,9 @@ function remove() {
     chrono.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (secondes ? (secondes > 9 ? secondes : "0" + secondes) : "00") + ":" + (csecondes > 9 ? csecondes : "0" + csecondes);
     //chrono.textContent = minutes+" : "+secondes+" : "+csecondes;
     if (totalCsec<0){
+        clearTimeout(x);
+        clearTimeout(y);
+        clearTimeout(z);
         stopchrono();
         perdu();
         return;
@@ -88,8 +92,6 @@ function clearchrono() {
         chrono.textContent = "00:00:00";
         csecondes = 0,secondes = 0, minutes = 0;
         totalCsec = (130+(13*((numCard-10)/2))) * numCard;
-        console.log(numCard);
-        console.log(totalCsec);
     }
 }
 function stopchrono(){
@@ -195,15 +197,15 @@ function play(){
         if(flippedCard.length<2){
             if(front[position]==0){
                 front[position]=1;
-                setTimeout(function(){
+                x=setTimeout(function(){
                     flip(position);
                 },0);
-                setTimeout(function(){
+                y=setTimeout(function(){
                     update(position);
                     flippedCard.push(position);
                 },200);
             }
-            setTimeout(function(){
+            z=setTimeout(function(){
                 if(flippedCard.length==2){
                     state=0;
                     if(cardDispo[flippedCard[0]]==cardDispo[flippedCard[1]]){
@@ -213,13 +215,13 @@ function play(){
                     if((numPair==(numCard/2))&&(cardDispo[flippedCard[0]]==cardDispo[flippedCard[1]])){
                         stopchrono();
                     }
-                    setTimeout(function(){
+                    x=setTimeout(function(){
                         flip(flippedCard[0]);
                         flip(flippedCard[1]);
                     },300);
                     front[flippedCard[0]]=state;
                     front[flippedCard[1]]=state;
-                    setTimeout(function(){
+                    y=setTimeout(function(){
                         update(flippedCard[0]);
                         update(flippedCard[1]);
                         flippedCard=[];
