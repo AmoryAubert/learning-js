@@ -30,16 +30,19 @@ function changeTheme2(){
         styleSheet.href = "assets/css/theme02.css";
         theme= "p";
 }
+//bouton
+let option=document.getElementById("option"),
+    switchOnOff1=document.getElementById("radio-c"),
+    switchOnOff2=document.getElementById("radio-d"),
+    start = document.getElementById('start');
 //chrono
 let chrono = document.getElementById("time"),
     t;
 let bSw = 0;
-let csecondes, secondes, minutes;
-if(bSw==0){
-        csecondes = 30000;secondes = 0;minutes = 0;
-} else {
-        csecondes = 0;secondes = 0;minutes = 0;
-}
+let nbCarte=document.getElementById("nbCarte"),
+    ga = document.getElementById("gameArea"),
+    numCard;
+let csecondes, secondes, minutes, totalCsec;
 function add() {
     csecondes++;
     if (csecondes >= 100) {
@@ -53,45 +56,49 @@ function add() {
     chrono.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (secondes ? (secondes > 9 ? secondes : "0" + secondes) : "00") + ":" + (csecondes > 9 ? csecondes : "0" + csecondes);
     timer();
 }
+//chrono inverse
+function remove() {
+    minutes = Math.floor(totalCsec / 6000);
+    secondes = Math.floor(((totalCsec / 6000)-minutes)*60);
+    csecondes = Math.floor(((((totalCsec / 6000)-minutes)*60)-secondes)*100);
+    totalCsec--;
+    chrono.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (secondes ? (secondes > 9 ? secondes : "0" + secondes) : "00") + ":" + (csecondes > 9 ? csecondes : "0" + csecondes);
+    //chrono.textContent = minutes+" : "+secondes+" : "+csecondes;
+    if (totalCsec<0){
+        stopchrono();
+        perdu();
+        return;
+    }
+    timer();
+}
 function timer() {
     if(bSw==0){
-        t = setTimeout(add, 100);    
+        t = setTimeout(add, 9);    
     }
     if(bSw==1){ 
         t = setTimeout(remove, 9);    
     }
 }
 function clearchrono() {
-    chrono.textContent = "00:00:00";
-    csecondes = 0; secondes = 0; minutes = 0;
+    if(bSw==0){
+        chrono.textContent = "00:00:00";
+        csecondes = 0,secondes = 0, minutes = 0;    
+    }
+    if(bSw==1){ 
+        chrono.textContent = "00:00:00";
+        csecondes = 0,secondes = 0, minutes = 0;
+        totalCsec = (130+(13*((numCard-10)/2))) * numCard;
+        console.log(numCard);
+        console.log(totalCsec);
+    }
 }
 function stopchrono(){
     clearTimeout(t);
-}
-//chrono inverse
-function remove() {
-    csecondes--;
-    //if (csecondes <= 100) {
-    //    secondes--;
-    //    if (secondes <= 60) {
-    //        minutes--;
-    //    }
-    //}  
-    //chrono.textContent = (minutes ? (minutes < -9 ? minutes : "0" + minutes) : "00") + ":" + (secondes ? (secondes < -9 ? secondes : "0" + secondes) : "00") + ":" + (csecondes < -9 ? csecondes : "0" + csecondes);
-    chrono.textContent = csecondes;
-    timer();
 }
 //fonction random 
 function numAlea() {
     return (Math.random()*2 & 1)?-1:1;
 }
-//bouton
-let nbCarte=document.getElementById("nbCarte"),
-    option=document.getElementById("option"),
-    switchOnOff1=document.getElementById("radio-c"),
-    switchOnOff2=document.getElementById("radio-d"),
-    start = document.getElementById('start');
-    //csecondes = 0,secondes = 0, minutes = 0,
     
 start.addEventListener("click", play);
 switchOnOff1.addEventListener("click", onOff);
@@ -105,8 +112,6 @@ function onOff(){
         document.getElementById("onOff").style.paddingBottom="0.6rem";
         document.getElementById("onOff").style.backgroundColor="#eee";
         document.getElementById("onOff").style.color="#222";
-        chrono.textContent = "00:30:00";
-        let csecondes = 30000,secondes = 0, minutes = 0;
         bSw=1;
     } else {
         document.getElementById("onOff").innerHTML='<span class="toggle-inside"></span>OFF';
@@ -115,25 +120,22 @@ function onOff(){
         document.getElementById("onOff").style.paddingBottom="0rem";
         document.getElementById("onOff").style.backgroundColor="#222";
         document.getElementById("onOff").style.color="#eee";
-        chrono.textContent = "00:00:00";
-        let csecondes = 0,secondes = 0, minutes = 0;
         bSw=0;
     }
 }
 //jeu des paires
 function play(){
-    //clearchrono();
+    numCard = nbCarte.value;
+    clearchrono();
     timer();
     option.style.display= "none";
     start.disabled = true;
     nbCarte.disabled = true;
-    let numCard = nbCarte.value,
-        numPair = 0,
+    let numPair = 0,
         cardDispo = [],
         flippedCard = [],
         front=[],
         state,
-        ga = document.getElementById("gameArea"),
         gaWidth,
         shuffle = new Array();
     if (numCard%3==0){
@@ -232,12 +234,21 @@ function play(){
     function restart(){
         ga.style.width = "520px";
         ga.style.display ="block";
-        ga.innerHTML='<p id="message">Vous avez gagnez !!!</p>';
+        ga.innerHTML='<p id="message">tu as gagné !!!</p>';
         start.textContent="Rejouer";
         option.style.display= "block";
         start.disabled=false;
         nbCarte.disabled=false;
     }
+}
+function perdu(){
+    ga.style.width = "520px";
+    ga.style.display ="block";
+    ga.innerHTML='<p id="message">Tu as perdu espèce de FAIBLE !!!</p>';
+    start.textContent="Rejouer";
+    option.style.display= "block";
+    start.disabled=false;
+    nbCarte.disabled=false; 
 }
 
 
