@@ -17,7 +17,7 @@ function preloadImg(){
     }
 }
 //theme
-let styleSheet = document.getElementsByTagName('link')[2],
+let styleSheet = document.getElementsByTagName('link')[3],
     ff = document.getElementById("ff"),
     pk = document.getElementById("pk"),
     theme = "f";
