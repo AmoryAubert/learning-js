@@ -101,7 +101,6 @@ function stopchrono(){
 function numAlea() {
     return (Math.random()*2 & 1)?-1:1;
 }
-    
 start.addEventListener("click", play);
 switchOnOff1.addEventListener("click", onOff);
 switchOnOff2.addEventListener("click", onOff);
@@ -142,6 +141,10 @@ function play(){
         shuffle = new Array();
     if (numCard%3==0){
         gaWidth=(104*numCard)/3;
+    } else if((numCard>19)&&(numCard%4==0)){
+        gaWidth=(104*numCard)/4;
+    } else if(numCard>19){
+        gaWidth=(104*numCard)/3.5;
     } else {
         gaWidth=(104*numCard)/2;
     }
@@ -152,6 +155,9 @@ function play(){
     for (let i = 1; i <= numCard; i++){
         ga.innerHTML += `<img src="assets/img/${theme}versocard.png" id="c${i}" />`;
         cardDispo[i-1]=i;
+    }
+    if((numCard>19)&&(numCard%4!=0)){
+        ga.innerHTML += `<img src="assets/img/vide.png" /><img src="assets/img/vide.png" />`;
     }
     for (let i=0;i<numCard;i++){
         if (cardDispo.length==0) {break;}
