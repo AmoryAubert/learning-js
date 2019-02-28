@@ -1,43 +1,20 @@
-function countdown(endDate) {
-  let days, hours, minutes, seconds;
-  
-  //endDate = new Date(endDate).getTime();
-  
-//  if (isNaN(endDate)) {
-//	return;
-//  }
-  
-  setInterval(calculate, 999);
-  
-  function calculate() {
-    //let startDate = new Date();
-    //startDate = startDate.getTime();
-    
-    let timeRemaining = parseInt((endDate) /1000);
-    if (timeRemaining >= 0) {
-      days = parseInt(timeRemaining / 86400);
-      timeRemaining = (timeRemaining % 86400);
-      
-      hours = parseInt(timeRemaining / 3600);
-      timeRemaining = (timeRemaining % 3600);
-      
-      minutes = parseInt(timeRemaining / 60);
-      timeRemaining = (timeRemaining % 60);
-      
-      seconds = parseInt(timeRemaining);
-      //timeRemaining = (timeRemaining % 100);
-      
-      document.getElementById("days").innerHTML = parseInt(days, 10);
-      document.getElementById("hours").innerHTML = ("0" + hours).slice(-2);
-      document.getElementById("minutes").innerHTML = ("0" + minutes).slice(-2);
-      document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2);
-      return endDate--;
-    } else {
-      return;
-    }
-  }
-}
-
-(function () { 
-  countdown(30000); 
-}());
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext("2d");
+ctx.shadowColor ="rgba(0,0,0,0)";
+ctx.strokeStyle ="rgba(0,0,0,1)";
+ctx.lineWidth = 1;
+ctx.lineCap = "butt";
+ctx.lineJoin = "miter";
+ctx.beginPath();
+ctx.arc(200,200,180,0,2*Math.PI);
+ctx.closePath();
+ctx.stroke();
+ctx.shadowOffsetX = 30;
+ctx.shadowOffsetY = 30;
+ctx.shadowBlur = 30;
+ctx.shadowColor = "rgba(0,0,0,0)";
+grad = ctx.createRadialGradient(210,190,140,200,200,200);
+grad.addColorStop(0,"rgba(155,103,66,1)");
+grad.addColorStop(1,"rgba(104,79,63,1)");
+ctx.fillStyle = grad;
+ctx.fill();
