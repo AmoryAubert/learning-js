@@ -1,0 +1,32 @@
+body{
+    padding-top: 50px;
+}
+img{
+    margin: auto;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position : absolute;
+    z-index: 10;
+}
+#divimg{
+    height: 260px;
+    width: 260px;
+    border-radius: 50%;
+    z-index: 0;
+    position: absolute;
+    left: 50%;
+    margin-left: -130px;
+    overflow: hidden;
+}
+p{
+    text-align: center;
+    font-family: 'Srisakdi', cursive;
+    font-size: 20px;
+    margin : 30px 200px;
+}
+#author{
+    margin-top: 316px;
+    font-family: 'Lobster', cursive;
+}
