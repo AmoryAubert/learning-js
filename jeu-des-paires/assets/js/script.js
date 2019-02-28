@@ -11,7 +11,6 @@ function preloadImg(){
     preload[preload.length]="assets/img/fversocard.png";
     preload[preload.length]="assets/img/pversocard.png";
     preload[preload.length]="assets/img/vide.png";
-    console.log(preload);
     for(let i = 0; i < preload.length; i++) 
     {
         let imageObject = new Image();
