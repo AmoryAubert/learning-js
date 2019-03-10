@@ -19,26 +19,48 @@
 //ctx.fillStyle = grad;
 //ctx.fill();
 
-let main_character = {
-    name: "Gaspard",
-    level: 1,
-    life: 100,
-    weapon: sword = {
-        name: "sword",
-        damage: 5,
-    },
-    attack: function attack() {
-        let ennemis = ["Roger", "un mur", "une tasse de café", "Satan", "Philibert", "son docteur", "une paire de chaussette", "René", "une pantoufle", "un SDF", "la police"];
-        ennemis_random = ennemis[Math.floor(Math.random() * (ennemis.length))];
-        //la fonction doit retourner : (le nom du personnage) 
-        //attaque avec l'arme (nom de l'arme) les dégâts sont 
-        //(niveau du personnage multiplié par le damage de l'arme)
-        degat = main_character.level * sword.damage;
-        document.querySelector('#attack').innerHTML = main_character.name + " attaque avec " + main_character.weapon.name + " et inflige " + degat + " points de dégats à " + ennemis_random + " !";
-        console.log(main_character.name + " attaque avec " + main_character.weapon.name + " et inflige " + degat + " points de dégats à" + ennemis_random + " !");
-        return
-    },
+var canvas = document.querySelector("#myCanvas");
+var context = canvas.getContext("2d");
+ 
+var myImage = new Image();
+myImage.src = "assets/img/fighter-medium.png";
+myImage.addEventListener("load", loadImage, false);
+ 
+function loadImage(e) {
+  animate();
+}
+ 
+var shift = 0;
+var frameWidth = 397;
+var frameHeight = 278;
+var totalFrames = 20;
+var currentFrame = 0;
+let isanimate = 0;
 
-};
-
-document.getElementById('attack').addEventListener('click', main_character.attack);
+window.addEventListener("mousedown",function(){
+        if(isanimate==0){
+            currentFrame = 0;
+            shift = 0;
+            animate();
+        }
+    }); 
+function animate() {
+    isanimate=1;
+    context.clearRect(0, 0, 650, 650);
+    
+    //draw each frame + place them in the middle
+    context.drawImage(myImage, shift, 0, frameWidth, frameHeight,
+    0, 0, frameWidth, frameHeight);
+    
+    shift += frameWidth + 1;
+    
+    if (currentFrame == totalFrames) {
+        context.drawImage(myImage, 0, 0, frameWidth, frameHeight,
+        0, 0, frameWidth, frameHeight);
+        isanimate=0;
+        return;
+    }
+    currentFrame++;
+    
+    requestAnimationFrame(animate);
+}

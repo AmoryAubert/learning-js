@@ -35,13 +35,22 @@ function getRndInteger(min, max) {
 	let fighter,
 		fighterImage,
         monster,
-		canvas;					   
+		canvas,
+        framesPerSecond = 60,
+        request;					   
     
-	function gameLoop () {
-        window.requestAnimationFrame(gameLoop);
-        fighter.update();
-        fighter.render();
-        monster.update();
+	function gameLoop (timeStamp) {
+        setTimeout(function() {
+        
+ 
+            request = window.requestAnimationFrame(gameLoop);
+            fighter.update();
+            fighter.render();
+            monster.update();
+  
+  
+        }, 1000 / framesPerSecond);
+        
 	}
 	function sprite (options) {
 	
@@ -66,15 +75,21 @@ function getRndInteger(min, max) {
                     frameIndex += 1;
                 } else {
                     //frameIndex = 0;
-                    let lastClick = 0;
-                    let delay = 10;
-                    window.addEventListener("mousedown", function(){
-                        if (lastClick >= (Date.now() - delay))
-                            return;
-                        lastClick = Date.now();
-                        frameIndex = 0;
-                        tickCount = 0;
-                    });
+                    //let lastClick = 0;
+                    //let delay = 100;
+                    //window.addEventListener("mousedown", function(){
+                    //    if (lastClick >= (Date.now() - delay)){
+                    //        return
+                    //    } else {
+                            //lastClick = Date.now();
+                            frameIndex = 0;
+                            tickCount=0;
+                            console.log("coucou");
+                            //cancelAnimationFrame(request);
+                    //    }
+                    //    //fighterImage.src = "assets/img/fighter-medium.png?" + (new Date()).getTime();
+                    //    
+                    //});
                 }
             }
         };
