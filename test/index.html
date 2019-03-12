@@ -8,14 +8,11 @@
     <script src="http://d3js.org/d3.v4.min.js"></script>
     <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-<!--    <script>
-        $(document).ready(function(){
-            $('table td').dblclick(function(){
-                var cell = $(this).text();
-                $("#valeur").val(cell);		 
-            });
-        });
-	</script>-->
+    <style>
+        #bar-chart{
+            margin: 25px;
+        }
+    </style>
 </head>
 <body>
 <div id="bar-chart"></div>
@@ -92,8 +89,7 @@
                     <th>
                       <div>11</div>
                     </th>
-                    <td>Angleterre et
-                      <br />paysdeGalles(UK)</td>
+                    <td>Angleterre et paysdeGalles(UK)</td>
                     <td>151</td>
                     <td>154</td>
                   </tr>
@@ -205,7 +201,7 @@
                     <th>
                       <div>25</div>
                     </th>
-                    <td>IrlandeduNord(UK)</td>
+                    <td>Irlande du Nord(UK)</td>
                     <td>84</td>
                     <td>91</td>
                   </tr>
@@ -284,32 +280,19 @@ let tdTable2 = table2.querySelectorAll("td");
 for (let i=0; i<tdTable2.length;i++){
     dataTable2.push(tdTable2[i].innerHTML);
 }
-  console.log(dataTable2);
 for (let i=0; i<dataTable2.length;i+=3){
-    dataPoints3.push({"Month":i, "Unit Sales":[dataTable2[i+1],dataTable2[i+2]]});
-    //dataPoints3.push({"Month":i, "Unit Sales":dataTable2[i+2]});
+    dataPoints3.push({"Pays":dataTable2[i], "Population carcérale":dataTable2[i+1], "Population carcérale2":dataTable2[i+2]});
 }
-//var svg = dimple.newSvg("#chartContainer", 590, 400);
-//d3.tsv("", function (data) {
-//    data = dimple.filterData(data, "Owner", ["Aperture", "Black Mesa"])
-//    var myChart = new dimple.chart(svg, data);
-//    myChart.setBounds(60, 30, 505, 305);
-//    var x = myChart.addCategoryAxis("x", "Month");
-//    x.addOrderRule("Date");
-//    myChart.addMeasureAxis("y", "Unit Sales");
-//    var s = myChart.addSeries("Channel", dimple.plot.line);
-//    s.interpolation = "cardinal";
-//    myChart.addLegend(60, 10, 500, 20, "right");
-//    myChart.draw();
-//});
-let svg = dimple.newSvg("div#bar-chart", 800, 400);
+let svg = dimple.newSvg("div#bar-chart", 861, 700);
 let chart = new dimple.chart(svg, dataPoints3);
-chart.setBounds(60, 30, 505, 305);
-let x = chart.addCategoryAxis("x", "Month");
-x.addOrderRule("Date");
-chart.addMeasureAxis("y", "Unit Sales");
-let s = chart.addSeries("Channel", dimple.plot.line);
-chart.addLegend(60, 10, 500, 20, "right");
+chart.setBounds(60, 25, 800, 500);
+let x = chart.addCategoryAxis("x", "Pays");
+x.addOrderRule("Pays");
+let y1 = chart.addMeasureAxis("y", "Population carcérale");
+let y2 = chart.addMeasureAxis("y", "Population carcérale2");
+let s2 = chart.addSeries("2010-2012", dimple.plot.line, [x, y2]);
+let s1 = chart.addSeries("2007-2009", dimple.plot.line, [x, y1]);
+chart.addLegend(60, 10, 800, 20, "right");
 chart.draw();
 </script>
 </body>
