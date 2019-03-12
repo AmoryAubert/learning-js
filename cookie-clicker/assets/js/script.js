@@ -1,162 +1,66 @@
+//let canvas = document.getElementById("canvas");
+//let ctx = canvas.getContext("2d");
+//ctx.shadowColor ="rgba(0,0,0,0)";
+//ctx.strokeStyle ="rgba(0,0,0,1)";
+//ctx.lineWidth = 1;
+//ctx.lineCap = "butt";
+//ctx.lineJoin = "miter";
+//ctx.beginPath();
+//ctx.arc(200,200,180,0,2*Math.PI);
+//ctx.closePath();
+//ctx.stroke();
+//ctx.shadowOffsetX = 30;
+//ctx.shadowOffsetY = 30;
+//ctx.shadowBlur = 30;
+//ctx.shadowColor = "rgba(0,0,0,0)";
+//grad = ctx.createRadialGradient(210,190,140,200,200,200);
+//grad.addColorStop(0,"rgba(155,103,66,1)");
+//grad.addColorStop(1,"rgba(104,79,63,1)");
+//ctx.fillStyle = grad;
+//ctx.fill();
 
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min) ) + min;
+var canvas = document.querySelector("#myCanvas");
+var context = canvas.getContext("2d");
+ 
+var myImage = new Image();
+myImage.src = "assets/img/fighter-medium.png";
+myImage.addEventListener("load", loadImage, false);
+ 
+function loadImage(e) {
+  animate();
 }
-/* Start button */
-//start.addEventListener("click", timer);
+ 
+var shift = 0;
+var frameWidth = 397;
+var frameHeight = 278;
+var totalFrames = 20;
+var currentFrame = 0;
+let isanimate = 0;
 
-(function() {
-    let lastTime = 0;
-    let vendors = ['ms', 'moz', 'webkit', 'o'];
-    for(let x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
-                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
-    }
- 
-    if (!window.requestAnimationFrame)
-        window.requestAnimationFrame = function(callback, element) {
-            let currTime = new Date().getTime();
-            let timeToCall = Math.max(0, 16 - (currTime - lastTime));
-            let id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
-              timeToCall);
-            lastTime = currTime + timeToCall;
-            return id;
-        };
- 
-    if (!window.cancelAnimationFrame)
-        window.cancelAnimationFrame = function(id) {
-            clearTimeout(id);
-        };
-}());
-
-(function () {
-			
-	let fighter,
-		fighterImage,
-        monster,
-		canvas,
-        framesPerSecond = 60,
-        request;					   
-    
-	function gameLoop (timeStamp) {
-        setTimeout(function() {
-        
- 
-            request = window.requestAnimationFrame(gameLoop);
-            fighter.update();
-            fighter.render();
-            monster.update();
-  
-  
-        }, 1000 / framesPerSecond);
-        
-	}
-	function sprite (options) {
-	
-		let that = {},
-			frameIndex = 19,
-			tickCount = 0,
-			ticksPerFrame = options.ticksPerFrame || 0,
-			numberOfFrames = options.numberOfFrames || 1;
-		
-		that.context = options.context;
-		that.width = options.width;
-		that.height = options.height;
-		that.image = options.image;
-		
-		that.update = function () {
-            tickCount += 1;
-            if (tickCount > ticksPerFrame) {
-				tickCount = 0;
-                // If the current frame index is in range
-                if (frameIndex < numberOfFrames - 1) {	
-                    // Go to the next frame
-                    frameIndex += 1;
-                } else {
-                    //frameIndex = 0;
-                    //let lastClick = 0;
-                    //let delay = 100;
-                    //window.addEventListener("mousedown", function(){
-                    //    if (lastClick >= (Date.now() - delay)){
-                    //        return
-                    //    } else {
-                            //lastClick = Date.now();
-                            frameIndex = 0;
-                            tickCount=0;
-                            console.log("coucou");
-                            //cancelAnimationFrame(request);
-                    //    }
-                    //    //fighterImage.src = "assets/img/fighter-medium.png?" + (new Date()).getTime();
-                    //    
-                    //});
-                }
-            }
-        };
-		that.render = function () {
-		
-		  // Clear the canvas
-		  that.context.clearRect(0, 0, that.width, that.height);
-		  
-		  // Draw the animation
-		  that.context.drawImage(
-		    that.image,
-		    frameIndex * that.width / numberOfFrames,
-		    0,
-		    that.width / numberOfFrames,
-		    that.height,
-		    0,
-		    0,
-		    that.width / numberOfFrames,
-		    that.height);
-		};
-		
-		return that;
-	}
-	
-	// Get canvas
-	canvas = document.getElementById("fighterAnimation");
-	canvas.width = 600;
-	canvas.height = 600;
-	
-	// Create sprite sheet
-	fighterImage = new Image();	
-	
-	// Create sprite
-	fighter = sprite({
-		context: canvas.getContext("2d"),
-		width: 7960,//398
-		height: 278,
-		image: fighterImage,
-		numberOfFrames: 20,
-		ticksPerFrame: 1
-	});
-    function component(r, color, x, y) {
-        this.r = r;
-        this.x = x;
-        this.y = y; 
-        let ctx = canvas.getContext("2d");
-        this.update = function() {
-            ctx.save();
-            ctx.fillStyle = color;
-            ctx.arc(this.x, this.y, this.r, 0, 2*Math.PI);
-            ctx.fill();       
-            ctx.restore();    
-            }
+window.addEventListener("mousedown",function(){
+        if(isanimate==0){
+            currentFrame = 0;
+            shift = 0;
+            animate();
         }
-    monster = new component(50, "green", 400, 200);
-    //monster = ({
-    //    ctx.beginPath(),
-    //    ctx.arc(400,200,50,0,2*Math.PI),
-    //    ctx.closePath(),
-    //    ctx.fillStyle = "green",
-    //    ctx.fill();
-    //});
+    }); 
+function animate() {
+    isanimate=1;
+    context.clearRect(0, 0, 650, 650);
     
-	
-	// Load sprite sheet
-	fighterImage.addEventListener("load", gameLoop);
-	fighterImage.src = "assets/img/fighter-medium.png?" + (new Date()).getTime();
-
-} ());
-
+    //draw each frame + place them in the middle
+    context.drawImage(myImage, shift, 0, frameWidth, frameHeight,
+    0, 0, frameWidth, frameHeight);
+    
+    shift += frameWidth + 1;
+    
+    if (currentFrame == totalFrames) {
+        context.drawImage(myImage, 0, 0, frameWidth, frameHeight,
+        0, 0, frameWidth, frameHeight);
+        isanimate=0;
+        return;
+    }
+    currentFrame++;
+    
+    requestAnimationFrame(animate);
+}

@@ -22,28 +22,25 @@ function justeprix(){
         message.innerHTML += "<p class='rouge'>C'est plus que "+estimation+" !</p>";
     } else {
         message.innerHTML += "<p class='vert'>C'est juste tu as trouvé "+num+" en "+coup+" coups !</p>";
-    }
-}
-
-/*
-$(document).ready(function() {
-  var canvas = $('#canvas')[0];
+        document.getElementById("canvas").style.display = "block";
+        $(document).ready(function() {
+  let canvas = $('#canvas')[0];
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   
   if(canvas.getContext) {
-    var ctx = canvas.getContext('2d');
-    var w = canvas.width;
-    var h = canvas.height;
+    let ctx = canvas.getContext('2d');
+    let w = canvas.width;
+    let h = canvas.height;
     ctx.strokeStyle = 'rgba(174,194,224,0.5)';
     ctx.fillStyle = "yellow";
     ctx.lineWidth = 1;
     ctx.lineCap = 'round';
     
     
-    var init = [];
-    var maxParts = 100;
-    for(var a = 0; a < maxParts; a++) {
+    let init = [];
+    let maxParts = 100;
+    for(let a = 0; a < maxParts; a++) {
       init.push({
         x: Math.random() * w,
         y: Math.random() * h,
@@ -53,15 +50,15 @@ $(document).ready(function() {
       })
     }
     
-    var particles = [];
-    for(var b = 0; b < maxParts; b++) {
+    let particles = [];
+    for(let b = 0; b < maxParts; b++) {
       particles[b] = init[b];
     }
     
     function draw() {
       ctx.clearRect(0, 0, w, h);
-      for(var c = 0; c < particles.length; c++) {
-        var p = particles[c];
+      for(let c = 0; c < particles.length; c++) {
+        let p = particles[c];
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         //ctx.lineTo(p.x + p.l * p.xs, p.y + p.l * p.ys);
@@ -77,8 +74,8 @@ $(document).ready(function() {
     }
     
     function move() {
-      for(var b = 0; b < particles.length; b++) {
-        var p = particles[b];
+      for(let b = 0; b < particles.length; b++) {
+        let p = particles[b];
         p.x += p.xs;
         p.y += p.ys;
         if(p.x > w || p.y > h) {
@@ -92,4 +89,8 @@ $(document).ready(function() {
     
   }
 });
-*/
+
+    }
+}
+
+
