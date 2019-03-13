@@ -73,6 +73,7 @@ let xC1 = chart.addCategoryAxis("x", "Pays");
 xC1.addOrderRule("Pays");
 let y1C1 = chart.addMeasureAxis("y", "Infraction");
 let s1C1 = chart.addSeries("2002", dimple.plot.line, [xC1, y1C1]);
+s1C1.interpolation = "cardinal";
 for (let i=2; i<12 ; i++){
     let y$iC1 = chart.addMeasureAxis("y", `Infraction${i}`);
     let s$iC1 = chart.addSeries(2001+i, dimple.plot.line, [xC1, y$iC1]);
