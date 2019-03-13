@@ -1934,11 +1934,6 @@ tbody.collapse.in {
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
-@font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url('statexpflat/fonts/glyphicons/glyphicons-halflings-regular.eot');
-  src: url('statexpflat/fonts/glyphicons/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('statexpflat/fonts/glyphicons/glyphicons-halflings-regular.woff2') format('woff2'), url('statexpflat/fonts/glyphicons/glyphicons-halflings-regular.woff') format('woff'), url('statexpflat/fonts/glyphicons/glyphicons-halflings-regular.ttf') format('truetype'), url('statexpflat/fonts/glyphicons/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
 .glyphicon {
   position: relative;
   top: 1px;
@@ -5848,26 +5843,6 @@ button.close {
     display: none !important;
   }
 }
-@font-face {
-  font-family: open_sanssemibold;
-  src: url(statexpflat/fonts/opensans/OpenSans-Semibold.ttf);
-}
-@font-face {
-  font-family: open_sansregular;
-  src: url(statexpflat/fonts/opensans/OpenSans-Regular.ttf);
-}
-@font-face {
-  font-family: open_sansbold;
-  src: url(statexpflat/fonts/opensans/OpenSans-Bold.ttf);
-}
-@font-face {
-  font-family: roboto_condensedregular;
-  src: url(statexpflat/fonts/roboto/RobotoCondensed-Regular.ttf);
-}
-@font-face {
-  font-family: roboto_condensedbold;
-  src: url(statexpflat/fonts/roboto/RobotoCondensed-Bold.ttf);
-}
 body {
   padding: 0;
   background-color: #999;
@@ -5895,32 +5870,26 @@ a:hover {
 }
 #bodyContent a.external,
 #bodyContent a[href^="gopher://"] {
-  background: url(../media/external.png) center right no-repeat;
   padding-right: 13px;
 }
 #bodyContent a[href^="https://"],
 .link-https {
-  background: url(../medialock_icon.gif) center right no-repeat;
   padding-right: 16px;
 }
 #bodyContent a[href^="mailto:"],
 .link-mailto {
-  background: url(../media/mail_icon.gif) center right no-repeat;
   padding-right: 18px;
 }
 #bodyContent a[href^="news://"] {
-  background: url(../media/news_icon.png) center right no-repeat;
   padding-right: 18px;
 }
 #bodyContent a[href^="ftp://"],
 .link-ftp {
-  background: url(../media/file_icon.gif) center right no-repeat;
   padding-right: 18px;
 }
 #bodyContent a[href^="irc://"],
 #bodyContent a.extiw[href^="irc://"],
 .link-irc {
-  background: url(../media/discussionitem_icon.gif) center right no-repeat;
   padding-right: 18px;
 }
 #bodyContent a.external[href$=".ogg"],
@@ -5936,7 +5905,6 @@ a:hover {
 #bodyContent a.external[href$=".wma"],
 #bodyContent a.external[href$=".WMA"],
 .link-audio {
-  background: url("../media/audio.png") center right no-repeat;
   padding-right: 13px;
 }
 #bodyContent a.external[href$=".ogm"],
@@ -5948,7 +5916,6 @@ a:hover {
 #bodyContent a.external[href$=".mpg"],
 #bodyContent a.external[href$=".MPG"],
 .link-video {
-  background: url("../media/video.png") center right no-repeat;
   padding-right: 13px;
 }
 #bodyContent a.external[href$=".pdf"],
@@ -5958,7 +5925,6 @@ a:hover {
 #bodyContent a.external[href*=".pdf?"],
 #bodyContent a.external[href*=".PDF?"],
 .link-document {
-  background: url("../media/document.png") center right no-repeat;
   padding-right: 12px;
 }
 /*picture box*/
@@ -6268,7 +6234,6 @@ a:hover {
   content: " | ";
 }
 .header .login .login-icon {
-  background-image: url(../media/login.png);
   background-repeat: no-repeat;
   width: 17px;
   height: 25px;
@@ -6301,7 +6266,6 @@ a:hover {
 .header .flag {
   width: 53px;
   height: 34px;
-  background-image: url(../media/flag.png);
   background-repeat: no-repeat;
   position: absolute;
   z-index: 999;
@@ -6310,7 +6274,6 @@ a:hover {
   width: 45px;
   height: 30px;
   margin-left: 15px;
-  background-image: url(../media/flag-mobile.png);
   background-repeat: no-repeat;
   position: absolute;
   z-index: 999;
@@ -6324,7 +6287,6 @@ a:hover {
   }
 }
 .header .heading .lighthouse {
-  background-image: url(../media/lighthouse.png);
   background-repeat: no-repeat;
   width: 129px;
   height: 101px;
@@ -6457,7 +6419,6 @@ a:hover {
 }
 .header .heading .statexptitle {
   position: absolute;
-  background-image: url(../media/StatExplainedTitle-02.png);
   background-repeat: no-repeat;
 }
 @media (min-width: 768px) {
@@ -7248,13 +7209,11 @@ a:hover {
   color: #ea7424;
 }
 .quote-left {
-  background-image: url(../media/quote-left.png);
   background-repeat: no-repeat;
   width: 45px;
   height: 33px;
 }
 .quote-right {
-  background-image: url(../media/quote-right.png);
   background-repeat: no-repeat;
   width: 45px;
   height: 33px;
@@ -7384,33 +7343,6 @@ a:hover {
   float: left;
   margin-top: 5px;
 }
-.mpm-new-article .mpm-new-header .mpm-new-article-theme.mpm-new-article-theme-1 {
-  background-image: url(statexpflat/themes/32x32/color/general.png);
-}
-.mpm-new-article .mpm-new-header .mpm-new-article-theme.mpm-new-article-theme-2 {
-  background-image: url(statexpflat/themes/32x32/color/economy.png);
-}
-.mpm-new-article .mpm-new-header .mpm-new-article-theme.mpm-new-article-theme-3 {
-  background-image: url(statexpflat/themes/32x32/color/population.png);
-}
-.mpm-new-article .mpm-new-header .mpm-new-article-theme.mpm-new-article-theme-4 {
-  background-image: url(statexpflat/themes/32x32/color/industry.png);
-}
-.mpm-new-article .mpm-new-header .mpm-new-article-theme.mpm-new-article-theme-5 {
-  background-image: url(statexpflat/themes/32x32/color/agriculture.png);
-}
-.mpm-new-article .mpm-new-header .mpm-new-article-theme.mpm-new-article-theme-6 {
-  background-image: url(statexpflat/themes/32x32/color/international.png);
-}
-.mpm-new-article .mpm-new-header .mpm-new-article-theme.mpm-new-article-theme-7 {
-  background-image: url(statexpflat/themes/32x32/color/transport.png);
-}
-.mpm-new-article .mpm-new-header .mpm-new-article-theme.mpm-new-article-theme-8 {
-  background-image: url(statexpflat/themes/32x32/color/environment.png);
-}
-.mpm-new-article .mpm-new-header .mpm-new-article-theme.mpm-new-article-theme-9 {
-  background-image: url(statexpflat/themes/32x32/color/science.png);
-}
 .mpm-new-article .mpm-new-article-content {
   margin-top: 5px;
 }
@@ -7505,72 +7437,54 @@ a:hover {
   color: white;
 }
 .stat-themes .general {
-  background-image: url(statexpflat/themes/32x32/color/general.png);
 }
 .stat-themes .general:hover {
   background-color: #466eb4;
-  background-image: url(statexpflat/themes/32x32/white/general.png);
 }
 .stat-themes .agriculture {
-  background-image: url(statexpflat/themes/32x32/color/agriculture.png);
 }
 .stat-themes .agriculture:hover {
   background-color: #7daf4b;
-  background-image: url(statexpflat/themes/32x32/white/agriculture.png);
 }
 .stat-themes .environment {
-  background-image: url(statexpflat/themes/32x32/color/environment.png);
 }
 .stat-themes .environment:hover {
   background-color: #41afaa;
-  background-image: url(statexpflat/themes/32x32/white/environment.png);
 }
 .stat-themes .economy {
-  background-image: url(statexpflat/themes/32x32/color/economy.png);
 }
 .stat-themes .economy:hover {
   background-color: #af4b91;
-  background-image: url(statexpflat/themes/32x32/white/economy.png);
 }
 .stat-themes .international {
-  background-image: url(statexpflat/themes/32x32/color/international.png);
 }
 .stat-themes .international:hover {
   background-color: #c80a37;
   background-color: #b93c46;
-  background-image: url(statexpflat/themes/32x32/white/international.png);
 }
 .stat-themes .industry {
-  background-image: url(statexpflat/themes/32x32/color/industry.png);
 }
 .stat-themes .industry:hover {
   background-color: #009bdc;
   background-color: #00a0e1;
-  background-image: url(statexpflat/themes/32x32/white/industry.png);
 }
 .stat-themes .population {
-  background-image: url(statexpflat/themes/32x32/color/population.png);
 }
 .stat-themes .population:hover {
   background-color: #dc9b00;
   background-color: #e6a532;
-  background-image: url(statexpflat/themes/32x32/white/population.png);
 }
 .stat-themes .science {
-  background-image: url(statexpflat/themes/32x32/color/science.png);
 }
 .stat-themes .science:hover {
   background-color: #e66c0a;
   background-color: #d7642d;
-  background-image: url(statexpflat/themes/32x32/white/science.png);
 }
 .stat-themes .transport {
-  background-image: url(statexpflat/themes/32x32/color/transport.png);
 }
 .stat-themes .transport:hover {
   background-color: #666;
   background-color: #b9c337;
-  background-image: url(statexpflat/themes/32x32/white/transport.png);
 }
 @media (max-width: 767px) {
   .stat-themes {
@@ -7586,33 +7500,6 @@ a:hover {
 .stat-theme-icon.stat-theme-icon-center {
   margin-left: auto;
   margin-right: auto;
-}
-.stat-theme-1 {
-  background-image: url(statexpflat/themes/32x32/color/general.png);
-}
-.stat-theme-5 {
-  background-image: url(statexpflat/themes/32x32/color/agriculture.png);
-}
-.stat-theme-8 {
-  background-image: url(statexpflat/themes/32x32/color/environment.png);
-}
-.stat-theme-2 {
-  background-image: url(statexpflat/themes/32x32/color/economy.png);
-}
-.stat-theme-6 {
-  background-image: url(statexpflat/themes/32x32/color/international.png);
-}
-.stat-theme-4 {
-  background-image: url(statexpflat/themes/32x32/color/industry.png);
-}
-.stat-theme-3 {
-  background-image: url(statexpflat/themes/32x32/color/population.png);
-}
-.stat-theme-9 {
-  background-image: url(statexpflat/themes/32x32/color/science.png);
-}
-.stat-theme-7 {
-  background-image: url(statexpflat/themes/32x32/color/transport.png);
 }
 .article-action-bar {
   float: right;
@@ -7805,7 +7692,6 @@ div.prefsectiontip {
   -webkit-border-radius: 0  !important;
 }
 .tipsy-arrow {
-  background: url('../media/tipsy.png') no-repeat top left !important;
 }
 /*print button*/
 #userbar-print a {

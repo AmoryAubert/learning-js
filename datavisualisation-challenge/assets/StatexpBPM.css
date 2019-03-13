@@ -12,23 +12,6 @@
 	background-position: center center;
 }
 
-.statexpbpm-icon-current {
-	background-image: url(media/1.png);
-}
-.statexpbpm-icon-stable {
-	background-image: url(media/2.png);
-}
-.statexpbpm-icon-quality {
-	background-image: url(media/3.png);
-}
-.statexpbpm-icon-locked {
-	background-image: url(media/lock-closed.png);
-}
-.statexpbpm-icon-unlocked {
-	width: 23px;
-	background-image: url(media/lock-open.png);
-}
-
 .statexpbpm_short {
 	border: 0px;
 	background-color: #f9f9f9;

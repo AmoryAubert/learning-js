@@ -75,7 +75,6 @@
   list-style-type: none;
 }
 .dynamic-chart-container .dynamic-chart-container-estat-logo {
-  background-image: url(logo_estat_chart.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 100px;
@@ -156,63 +155,54 @@
   margin: auto;
 }
 #direct-access-col #direct-access-panel #dat-tab-header .dat-seealso-icon {
-  background-image: url(../../../skins/statexpflat/css/media/icon/StatExplained90.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 50px;
   height: 50px;
 }
 #direct-access-col #direct-access-panel #dat-tab-header .dat-publications-icon {
-  background-image: url(../../../skins/statexpflat/css/media/icon/Publications.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 50px;
   height: 50px;
 }
 #direct-access-col #direct-access-panel #dat-tab-header .dat-tables-icon {
-  background-image: url(../../../skins/statexpflat/css/media/icon/PremadeTables.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 50px;
   height: 50px;
 }
 #direct-access-col #direct-access-panel #dat-tab-header .dat-database-icon {
-  background-image: url(../../../skins/statexpflat/css/media/icon/Database.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 50px;
   height: 50px;
 }
 #direct-access-col #direct-access-panel #dat-tab-header .dat-methodology-icon {
-  background-image: url(../../../skins/statexpflat/css/media/icon/Methodology.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 50px;
   height: 50px;
 }
 #direct-access-col #direct-access-panel #dat-tab-header .dat-links-icon {
-  background-image: url(../../../skins/statexpflat/css/media/icon/Links.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 50px;
   height: 50px;
 }
 #direct-access-col #direct-access-panel #dat-tab-header .dat-legal-icon {
-  background-image: url(../../../skins/statexpflat/css/media/icon/Legal.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 50px;
   height: 50px;
 }
 #direct-access-col #direct-access-panel #dat-tab-header .dat-visualisations-icon {
-  background-image: url(../../../skins/statexpflat/css/media/icon/Visualisations.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 50px;
   height: 50px;
 }
 #direct-access-col #direct-access-panel #dat-tab-header .dat-dedicatedsection-icon {
-  background-image: url(../../../skins/statexpflat/css/media/icon/DedicatedSection.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 50px;
