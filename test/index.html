@@ -683,51 +683,60 @@ let year = 2002,
 //                     {"pays":dataTable1[i], "Measure":"Value 11", "Value" : dataTable1[i+11].replace(/:/g, "0")}
 //                     );
 //}
-for (let i=0; i<10;i++){
+for (let i=1; i<11;i++){
     dataPoints2.push(
-                     {"pays":dataTable1[0*12], "Measure":"Value"+i, "Value" : dataTable1[i+1].replace(/:/g, "0")},
-                     {"pays":dataTable1[1*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(1*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[2*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(2*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[3*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(3*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[4*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(4*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[5*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(5*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[6*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(6*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[7*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(7*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[8*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(8*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[9*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(9*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[10*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(10*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[11*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(11*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[12*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(12*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[13*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(13*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[14*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(14*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[15*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(15*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[16*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(16*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[17*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(17*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[18*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(18*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[19*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(19*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[20*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(20*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[21*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(21*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[22*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(22*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[23*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(23*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[24*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(24*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[25*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(25*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[26*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(26*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[27*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(27*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[28*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(28*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[29*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(29*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[30*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(30*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[31*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(31*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[32*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(32*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[33*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(33*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[34*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(34*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[35*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(35*12)].replace(/:/g, "0")},
-                     {"pays":dataTable1[36*12], "Measure":"Value"+i, "Value" : dataTable1[i+1+(36*12)].replace(/:/g, "0")}
-                     );
+                     {"Pays":dataTable1[0*12], "Measure":"Value "+i, "Value" : Number(dataTable1[i].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[1*12], "Measure":"Value "+i, "Value" : Number(dataTable1[i+(1*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[2*12], "Measure":"Value "+i, "Value" : Number(dataTable1[i+(2*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[3*12], "Measure":"Value "+i, "Value" : Number(dataTable1[i+1+(3*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[4*12], "Measure":"Value "+i, "Value" : Number(dataTable1[i+1+(4*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[5*12], "Measure":"Value "+i, "Value" : Number(dataTable1[i+1+(5*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[6*12], "Measure":"Value "+i, "Value" : dataTable1[i+(6*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[7*12], "Measure":"Value "+i, "Value" : dataTable1[i+(7*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[8*12], "Measure":"Value "+i, "Value" : dataTable1[i+(8*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[9*12], "Measure":"Value "+i, "Value" : dataTable1[i+(9*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[10*12], "Measure":"Value "+i, "Value" : dataTable1[i+(10*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[11*12], "Measure":"Value "+i, "Value" : dataTable1[i+(11*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[12*12], "Measure":"Value "+i, "Value" : dataTable1[i+(12*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[13*12], "Measure":"Value "+i, "Value" : dataTable1[i+(13*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[14*12], "Measure":"Value "+i, "Value" : dataTable1[i+(14*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[15*12], "Measure":"Value "+i, "Value" : dataTable1[i+(15*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[16*12], "Measure":"Value "+i, "Value" : dataTable1[i+(16*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[17*12], "Measure":"Value "+i, "Value" : dataTable1[i+(17*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[18*12], "Measure":"Value "+i, "Value" : dataTable1[i+(18*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[19*12], "Measure":"Value "+i, "Value" : dataTable1[i+(19*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[20*12], "Measure":"Value "+i, "Value" : dataTable1[i+(20*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[21*12], "Measure":"Value "+i, "Value" : dataTable1[i+(21*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[22*12], "Measure":"Value "+i, "Value" : dataTable1[i+(22*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[23*12], "Measure":"Value "+i, "Value" : dataTable1[i+(23*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[24*12], "Measure":"Value "+i, "Value" : dataTable1[i+(24*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[25*12], "Measure":"Value "+i, "Value" : dataTable1[i+(25*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[26*12], "Measure":"Value "+i, "Value" : dataTable1[i+(26*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[27*12], "Measure":"Value "+i, "Value" : dataTable1[i+(27*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[28*12], "Measure":"Value "+i, "Value" : dataTable1[i+(28*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[29*12], "Measure":"Value "+i, "Value" : dataTable1[i+(29*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[30*12], "Measure":"Value "+i, "Value" : dataTable1[i+(30*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[31*12], "Measure":"Value "+i, "Value" : dataTable1[i+(31*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[32*12], "Measure":"Value "+i, "Value" : dataTable1[i+(32*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[33*12], "Measure":"Value "+i, "Value" : dataTable1[i+(33*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[34*12], "Measure":"Value "+i, "Value" : dataTable1[i+(34*12)].replace(/:/g, "0")}
+                   );
 }
+//dataPoints2 = [
+//    { "Pays" : "1", "Measure" : "Value 1", "Value" : 100 },
+//    { "Pays" : "1", "Measure" : "Value 2", "Value" : 110 },
+//    { "Pays" : "1", "Measure" : "Value 3", "Value" : 80 },
+//    { "Pays" : "2", "Measure" : "Value 1", "Value" : 300 },
+//    { "Pays" : "2", "Measure" : "Value 2", "Value" : 245 },
+//    { "Pays" : "2", "Measure" : "Value 3", "Value" : 285 },
+//    { "Pays" : "3", "Measure" : "Value 1", "Value" : 140 },
+//    { "Pays" : "3", "Measure" : "Value 2", "Value" : 200 },
+//    { "Pays" : "3", "Measure" : "Value 3", "Value" : 170 }
+//];
 console.log(dataPoints2);
-let svg = dimple.newSvg("div#bar-chart", 861, 700);
+let svg = dimple.newSvg("div#bar-chart", 1661, 700);
 let chart = new dimple.chart(svg, dataPoints2);
-chart.setBounds(60, 25, 800, 500);
+chart.setBounds(60, 25, 1600, 500);
 let x = chart.addCategoryAxis("x", ["Pays", "Measure"]);
 x.addOrderRule("Pays");
 let y1 = chart.addMeasureAxis("y", "Value");
