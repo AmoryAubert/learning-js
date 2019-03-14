@@ -52,35 +52,73 @@ let tdTable1 = table1.querySelectorAll("td");
 for (let i=0; i<tdTable1.length;i++){
     dataTable1.push(tdTable1[i].innerHTML);
 }
-for (let i=0; i<dataTable1.length;i+=12){
-    dataPoints2.push({"Pays":dataTable1[i].replace(/:/g, "0"),
-                      "Infraction":dataTable1[i+1].replace(/:/g, "0"),
-                      "Infraction2":dataTable1[i+2].replace(/:/g, "0"),
-                      "Infraction3":dataTable1[i+3].replace(/:/g, "0"),
-                      "Infraction4":dataTable1[i+4].replace(/:/g, "0"),
-                      "Infraction5":dataTable1[i+5].replace(/:/g, "0"),
-                      "Infraction6":dataTable1[i+6].replace(/:/g, "0"),
-                      "Infraction7":dataTable1[i+7].replace(/:/g, "0"),
-                      "Infraction8":dataTable1[i+8].replace(/:/g, "0"),
-                      "Infraction9":dataTable1[i+9].replace(/:/g, "0"),
-                      "Infraction10":dataTable1[i+10].replace(/:/g, "0"),
-                      "Infraction11":dataTable1[i+11].replace(/:/g, "0")});
+for (let i=1; i<12;i++){
+    dataPoints2.push(
+                     {"Pays":dataTable1[0*12], "Année":(2001+i), "Infraction" : dataTable1[i].replace(/:/g, "0")},
+                     {"Pays":dataTable1[1*12], "Année":(2001+i), "Infraction" : dataTable1[i+(1*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[2*12], "Année":(2001+i), "Infraction" : dataTable1[i+(2*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[3*12], "Année":(2001+i), "Infraction" : dataTable1[i+(3*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[4*12], "Année":(2001+i), "Infraction" : dataTable1[i+(4*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[5*12], "Année":(2001+i), "Infraction" : dataTable1[i+(5*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[6*12], "Année":(2001+i), "Infraction" : dataTable1[i+(6*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[7*12], "Année":(2001+i), "Infraction" : dataTable1[i+(7*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[8*12], "Année":(2001+i), "Infraction" : dataTable1[i+(8*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[9*12], "Année":(2001+i), "Infraction" : dataTable1[i+(9*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[10*12], "Année":(2001+i), "Infraction" : dataTable1[i+(10*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[11*12], "Année":(2001+i), "Infraction" : dataTable1[i+(11*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[12*12], "Année":(2001+i), "Infraction" : dataTable1[i+(12*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[13*12], "Année":(2001+i), "Infraction" : dataTable1[i+(13*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[14*12], "Année":(2001+i), "Infraction" : dataTable1[i+(14*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[15*12], "Année":(2001+i), "Infraction" : dataTable1[i+(15*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[16*12], "Année":(2001+i), "Infraction" : dataTable1[i+(16*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[17*12], "Année":(2001+i), "Infraction" : dataTable1[i+(17*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[18*12], "Année":(2001+i), "Infraction" : dataTable1[i+(18*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[19*12], "Année":(2001+i), "Infraction" : dataTable1[i+(19*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[20*12], "Année":(2001+i), "Infraction" : dataTable1[i+(20*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[21*12], "Année":(2001+i), "Infraction" : dataTable1[i+(21*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[22*12], "Année":(2001+i), "Infraction" : dataTable1[i+(22*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[23*12], "Année":(2001+i), "Infraction" : dataTable1[i+(23*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[24*12], "Année":(2001+i), "Infraction" : dataTable1[i+(24*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[25*12], "Année":(2001+i), "Infraction" : dataTable1[i+(25*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[26*12], "Année":(2001+i), "Infraction" : dataTable1[i+(26*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[27*12], "Année":(2001+i), "Infraction" : dataTable1[i+(27*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[28*12], "Année":(2001+i), "Infraction" : dataTable1[i+(28*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[29*12], "Année":(2001+i), "Infraction" : dataTable1[i+(29*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[30*12], "Année":(2001+i), "Infraction" : dataTable1[i+(30*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[31*12], "Année":(2001+i), "Infraction" : dataTable1[i+(31*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[32*12], "Année":(2001+i), "Infraction" : dataTable1[i+(32*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[33*12], "Année":(2001+i), "Infraction" : dataTable1[i+(33*12)].replace(/:/g, "0")},
+                     {"Pays":dataTable1[34*12], "Année":(2001+i), "Infraction" : dataTable1[i+(34*12)].replace(/:/g, "0")}
+                   );
 }
-let svg2 = dimple.newSvg("div#line-chart1", 861, 620);
-let chart = new dimple.chart(svg2, dataPoints2);
-chart.setBounds(60, 25, 800, 500);
-let xC1 = chart.addCategoryAxis("x", "Pays");
+let svg2 = dimple.newSvg("div#line-chart1", 6061, 570);
+let chart2 = new dimple.chart(svg2, dataPoints2);
+chart2.setBounds(60, 25, 6000, 500);
+let xC1 = chart2.addCategoryAxis("x", ["Pays", "Année"]);
 xC1.addOrderRule("Pays");
-let y1C1 = chart.addMeasureAxis("y", "Infraction");
-let s1C1 = chart.addSeries("2002", dimple.plot.line, [xC1, y1C1]);
-s1C1.interpolation = "cardinal";
-for (let i=2; i<12 ; i++){
-    let y$iC1 = chart.addMeasureAxis("y", `Infraction${i}`);
-    let s$iC1 = chart.addSeries(2001+i, dimple.plot.line, [xC1, y$iC1]);
-    s$iC1.interpolation = "cardinal";
-}
-chart.addLegend(120, 10, 800, 10, "left");
-chart.draw();
+let y1C1 = chart2.addMeasureAxis("y", "Infraction");
+let s1C1 = chart2.addSeries("Année", dimple.plot.bar);
+let legend = chart2.addLegend(60, 10, 800, 20, "left");
+legend._getEntries = function () {
+    var orderedValues = ["2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012"];
+    var entries = [];
+    orderedValues.forEach(function (v) {
+        entries.push(
+        {
+                key: v,
+                fill: chart2.getColor(v).fill,
+                stroke: chart2.getColor(v).stroke,
+                opacity: chart2.getColor(v).opacity,
+                series: s1C1,
+                aggField: [v]
+            }
+        );
+    }, this);
+  
+    return entries;
+};
+chart2.draw();
+newDiv2.style.overflowX = "scroll";
 // TROISIEME GRAPHIQUE
 let newDiv3 = document.createElement("div");
 let newContent3 = document.createTextNode("");

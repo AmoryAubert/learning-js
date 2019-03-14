@@ -668,85 +668,72 @@ let year = 2002,
 ////for (let i in data){
 ////    dataPoints.push({"Année":data[i][0], "Taux de criminalité":data[i][1]});
 ////}
-//for (let i=0; i<dataTable1.length;i+=12){
-//    dataPoints2.push(
-//                     {"pays":dataTable1[i], "Measure":"Value 1", "Value" : dataTable1[i+1].replace(/:/g, "0")},
-//                     {"pays":dataTable1[i], "Measure":"Value 2", "Value" : dataTable1[i+2].replace(/:/g, "0")},
-//                     {"pays":dataTable1[i], "Measure":"Value 3", "Value" : dataTable1[i+3].replace(/:/g, "0")},
-//                     {"pays":dataTable1[i], "Measure":"Value 4", "Value" : dataTable1[i+4].replace(/:/g, "0")},
-//                     {"pays":dataTable1[i], "Measure":"Value 5", "Value" : dataTable1[i+5].replace(/:/g, "0")},
-//                     {"pays":dataTable1[i], "Measure":"Value 6", "Value" : dataTable1[i+6].replace(/:/g, "0")},
-//                     {"pays":dataTable1[i], "Measure":"Value 7", "Value" : dataTable1[i+7].replace(/:/g, "0")},
-//                     {"pays":dataTable1[i], "Measure":"Value 8", "Value" : dataTable1[i+8].replace(/:/g, "0")},
-//                     {"pays":dataTable1[i], "Measure":"Value 9", "Value" : dataTable1[i+9].replace(/:/g, "0")},
-//                     {"pays":dataTable1[i], "Measure":"Value 10", "Value" : dataTable1[i+10].replace(/:/g, "0")},
-//                     {"pays":dataTable1[i], "Measure":"Value 11", "Value" : dataTable1[i+11].replace(/:/g, "0")}
-//                     );
-//}
-for (let i=1; i<11;i++){
+for (let i=1; i<12;i++){
     dataPoints2.push(
-                     {"Pays":dataTable1[0*12], "Measure":"Value "+i, "Value" : Number(dataTable1[i].replace(/:/g, "0").replace(/,/g, "."))},
-                     {"Pays":dataTable1[1*12], "Measure":"Value "+i, "Value" : Number(dataTable1[i+(1*12)].replace(/:/g, "0").replace(/,/g, "."))},
-                     {"Pays":dataTable1[2*12], "Measure":"Value "+i, "Value" : Number(dataTable1[i+(2*12)].replace(/:/g, "0").replace(/,/g, "."))},
-                     {"Pays":dataTable1[3*12], "Measure":"Value "+i, "Value" : Number(dataTable1[i+1+(3*12)].replace(/:/g, "0").replace(/,/g, "."))},
-                     {"Pays":dataTable1[4*12], "Measure":"Value "+i, "Value" : Number(dataTable1[i+1+(4*12)].replace(/:/g, "0").replace(/,/g, "."))},
-                     {"Pays":dataTable1[5*12], "Measure":"Value "+i, "Value" : Number(dataTable1[i+1+(5*12)].replace(/:/g, "0").replace(/,/g, "."))},
-                     {"Pays":dataTable1[6*12], "Measure":"Value "+i, "Value" : dataTable1[i+(6*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[7*12], "Measure":"Value "+i, "Value" : dataTable1[i+(7*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[8*12], "Measure":"Value "+i, "Value" : dataTable1[i+(8*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[9*12], "Measure":"Value "+i, "Value" : dataTable1[i+(9*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[10*12], "Measure":"Value "+i, "Value" : dataTable1[i+(10*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[11*12], "Measure":"Value "+i, "Value" : dataTable1[i+(11*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[12*12], "Measure":"Value "+i, "Value" : dataTable1[i+(12*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[13*12], "Measure":"Value "+i, "Value" : dataTable1[i+(13*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[14*12], "Measure":"Value "+i, "Value" : dataTable1[i+(14*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[15*12], "Measure":"Value "+i, "Value" : dataTable1[i+(15*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[16*12], "Measure":"Value "+i, "Value" : dataTable1[i+(16*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[17*12], "Measure":"Value "+i, "Value" : dataTable1[i+(17*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[18*12], "Measure":"Value "+i, "Value" : dataTable1[i+(18*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[19*12], "Measure":"Value "+i, "Value" : dataTable1[i+(19*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[20*12], "Measure":"Value "+i, "Value" : dataTable1[i+(20*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[21*12], "Measure":"Value "+i, "Value" : dataTable1[i+(21*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[22*12], "Measure":"Value "+i, "Value" : dataTable1[i+(22*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[23*12], "Measure":"Value "+i, "Value" : dataTable1[i+(23*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[24*12], "Measure":"Value "+i, "Value" : dataTable1[i+(24*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[25*12], "Measure":"Value "+i, "Value" : dataTable1[i+(25*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[26*12], "Measure":"Value "+i, "Value" : dataTable1[i+(26*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[27*12], "Measure":"Value "+i, "Value" : dataTable1[i+(27*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[28*12], "Measure":"Value "+i, "Value" : dataTable1[i+(28*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[29*12], "Measure":"Value "+i, "Value" : dataTable1[i+(29*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[30*12], "Measure":"Value "+i, "Value" : dataTable1[i+(30*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[31*12], "Measure":"Value "+i, "Value" : dataTable1[i+(31*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[32*12], "Measure":"Value "+i, "Value" : dataTable1[i+(32*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[33*12], "Measure":"Value "+i, "Value" : dataTable1[i+(33*12)].replace(/:/g, "0")},
-                     {"Pays":dataTable1[34*12], "Measure":"Value "+i, "Value" : dataTable1[i+(34*12)].replace(/:/g, "0")}
+                     {"Pays":dataTable1[0*12], "Année":(2001+i), "Value" : Number(dataTable1[i].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[1*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(1*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[2*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(2*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[3*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(3*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[4*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(4*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[5*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(5*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[6*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(6*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[7*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(7*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[8*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(8*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[9*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(9*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[10*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(10*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[11*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(11*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[12*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(12*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[13*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(13*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[14*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(14*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[15*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(15*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[16*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(16*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[17*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(17*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[18*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(18*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[19*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(19*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[20*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(20*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[21*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(21*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[22*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(22*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[23*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(23*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[24*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(24*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[25*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(25*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[26*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(26*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[27*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(27*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[28*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(28*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[29*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(29*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[30*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(30*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[31*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(31*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[32*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(32*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[33*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(33*12)].replace(/:/g, "0").replace(/,/g, "."))},
+                     {"Pays":dataTable1[34*12], "Année":(2001+i), "Value" : Number(dataTable1[i+(34*12)].replace(/:/g, "0").replace(/,/g, "."))}
                    );
 }
-//dataPoints2 = [
-//    { "Pays" : "1", "Measure" : "Value 1", "Value" : 100 },
-//    { "Pays" : "1", "Measure" : "Value 2", "Value" : 110 },
-//    { "Pays" : "1", "Measure" : "Value 3", "Value" : 80 },
-//    { "Pays" : "2", "Measure" : "Value 1", "Value" : 300 },
-//    { "Pays" : "2", "Measure" : "Value 2", "Value" : 245 },
-//    { "Pays" : "2", "Measure" : "Value 3", "Value" : 285 },
-//    { "Pays" : "3", "Measure" : "Value 1", "Value" : 140 },
-//    { "Pays" : "3", "Measure" : "Value 2", "Value" : 200 },
-//    { "Pays" : "3", "Measure" : "Value 3", "Value" : 170 }
-//];
-console.log(dataPoints2);
+//console.log(dataPoints2);
 let svg = dimple.newSvg("div#bar-chart", 1661, 700);
 let chart = new dimple.chart(svg, dataPoints2);
 chart.setBounds(60, 25, 1600, 500);
-let x = chart.addCategoryAxis("x", ["Pays", "Measure"]);
+let x = chart.addCategoryAxis("x", ["Pays", "Année"]);
 x.addOrderRule("Pays");
 let y1 = chart.addMeasureAxis("y", "Value");
-let s1 = chart.addSeries("Measure", dimple.plot.bar);
-//for (let i=2; i<12 ; i++){
-//    let y$i = chart.addMeasureAxis("y", `Value`);
-//    let s$i = chart.addSeries("Pays", dimple.plot.bar);
-//    //s$i.interpolation = "cardinal";
-//}
-chart.addLegend(60, 10, 800, 20, "left");
+let s1 = chart.addSeries("Année", dimple.plot.bar);
+let legend = chart.addLegend(60, 10, 800, 20, "left");
+legend._getEntries = function () {
+    var orderedValues = ["2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012"];
+    var entries = [];
+    orderedValues.forEach(function (v) {
+        entries.push(
+        {
+                key: v,
+                fill: chart.getColor(v).fill,
+                stroke: chart.getColor(v).stroke,
+                opacity: chart.getColor(v).opacity,
+                series: s1,
+                aggField: [v]
+            }
+        );
+    }, this);
+  
+    return entries;
+};
 chart.draw();
 //data = [
 //    { "ID" : "1", "Measure" : "Value 1", "Value" : 100000 },
