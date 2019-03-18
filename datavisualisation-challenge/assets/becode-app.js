@@ -91,9 +91,9 @@ for (let i=1; i<12;i++){
                      {"Pays":dataTable1[34*12], "Année":(2001+i), "Infraction" : dataTable1[i+(34*12)].replace(/:/g, "0")}
                    );
 }
-let svg2 = dimple.newSvg("div#line-chart1", 6061, 570);
+let svg2 = dimple.newSvg("div#line-chart1", 6071, 570);
 let chart2 = new dimple.chart(svg2, dataPoints2);
-chart2.setBounds(60, 25, 6000, 500);
+chart2.setBounds(70, 25, 6000, 500);
 let xC1 = chart2.addCategoryAxis("x", ["Pays", "Année"]);
 xC1.addOrderRule("Pays");
 let y1C1 = chart2.addMeasureAxis("y", "Infraction");
