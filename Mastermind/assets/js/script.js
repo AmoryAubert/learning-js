@@ -42,9 +42,16 @@ buttonValidation.addEventListener("click", function(){check();});
 function numAlea(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
 }
+let reponseCouleur=[];
+function tirage(){
+    for (let i=0;i<4;i++){
+        reponseCouleur[i]=numAlea(0,5);
+    }
+}
 // let's play to check
 let rondColor=[];
 let essaie=0;
+tirage();
 function check(){
     for (let i=0; i< colorEstimation.length;i++){
         if (colorEstimation[i].className != "rond blanc"){
@@ -52,6 +59,8 @@ function check(){
         }
     }
     if ((rondColor[0]==1)&&(rondColor[1]==1)&&(rondColor[2]==1)&&(rondColor[3]==1)){
+        
+        // reset le champs Estimation
         for (let i=0; i< colorEstimation.length;i++){
             colorEstimation[i].className = "rond blanc";
             essaie++;
