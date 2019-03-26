@@ -1,0 +1,39 @@
+*{
+    text-align: center;
+}
+html{
+    background: url("../img/GS.jpg") center fixed no-repeat;
+    background-size: cover;
+    margin:0;
+    padding:0;
+}
+#plateau{
+    width: 1200px;
+    background: #7d5788;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid #444;
+    display: flex;
+    flex-direction: row;
+}
+#mainP{
+    width: 375px;
+}
+#jeu{
+    display: flex;
+    flex-wrap: wrap;
+    width: 450px;
+    height: 450px;
+}
+.zoneCarte{
+    width: 148px;
+    height: 148px;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+#zc1,#zc3,#zc5,#zc7,#zc9{
+    background: #ccc;
+}
+#zc2,#zc4,#zc6,#zc8{
+    background: #eee;
+}
