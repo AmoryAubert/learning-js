@@ -1,4 +1,4 @@
-*{
+h1{
     text-align: center;
 }
 html{
@@ -6,6 +6,19 @@ html{
     background-size: cover;
     margin:0;
     padding:0;
+}
+img{
+  user-drag: none; 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.img-container{
+    width: 104px;
+    height: 128px;
+    /*background-color: transparent !important;*/
 }
 #plateau{
     width: 1200px;
@@ -17,19 +30,55 @@ html{
     flex-direction: row;
 }
 #mainP{
+    display: flex;
+    flex-wrap: wrap;
     width: 375px;
+}
+.hand-card{
+    position: absolute;
+}
+.card-top, .card-right, .card-bottom, .card-left{
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    font-size: 1.7em;
+    font-weight: bolder;
+    margin: 0;
+    padding: 0;
+}
+.card-top{
+    margin-top: 7px;
+    text-align: center;
+    width: 104px;
+}
+.card-left{
+    margin-top: 12px;
+    margin-left: 12px;
+}
+.card-right{
+    margin-left: 47px;
+}
+.card-bottom{
+    margin-top: 9px;
+    text-align: center;
+    width: 104px;
 }
 #jeu{
     display: flex;
     flex-wrap: wrap;
     width: 450px;
-    height: 450px;
+    height: 450px
 }
 .zoneCarte{
     width: 148px;
     height: 148px;
     border: 1px black solid;
     border-radius: 5px;
+}
+.zoneCarte div{
+    margin: 10px 20px;
 }
 #zc1,#zc3,#zc5,#zc7,#zc9{
     background: #ccc;

@@ -5,35 +5,14 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="http://d3js.org/d3.v4.min.js"></script>
-    <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="assets/js/shine.min.js"></script>
     <style>
-        #bar-chart{
-            margin: 25px;
-        }
-        #shine-object{
-          font-size: 40px;
-        }
     </style>
 </head>
 <body>
-<div id="shine-object">Ceci est un test</div>
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+
+<input onclick="responsiveVoice.speak('ha ha ha , bien fait pour ta gueule','French Female');" type='button' value='🔊 Play' />
 <script>
-let shine = new Shine(document.getElementById('shine-object'));
-let div = document.getElementById('shine-object');
-shine.light.position.x = window.innerWidth * 0.5;
-shine.light.position.y = window.innerHeight * 0.5;
-shine.draw();
-  shine.config.opacity = 0.1;
-  shine.config.opacityPow = 1.2;
-  shine.config.blur = 40;
-  shine.config.blurPow = 1;
-  shine.draw();
-  shine.config.offsetPow = 1.8;
-  shine.config.numSteps = 5;
-  shine.draw();
 </script>
 </body>
 </html>
