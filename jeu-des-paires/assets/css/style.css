@@ -79,6 +79,7 @@ legend{
   text-align: left;
 }
 fieldset{
+  border-color: #fff;
   border-radius: 5px;
 }
 #nbC{
