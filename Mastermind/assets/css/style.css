@@ -72,27 +72,27 @@ button:active, #estimation .rond:active, #couleur .rond:active{
 button, #estimation .rond, #couleur .rond{
     cursor: pointer;
 }
-.rouge{
+.c1{
     background-color: #f00;
 }
-.bleu{
+.c2{
     background-color: #00f;
 }
-.vert{
+.c3{
     background-color: #0f0;
 }
-.jaune{
+.c4{
     background-color: #ff0;
 }
-.orange{
+.c5{
     background-color: #f80;
 }
-.violet{
+.c6{
     background-color: #808;
 }
-.blanc{
+.c0{
     background-color: #fff;
 }
-.noir{
+.c7{
     background-color: #000;
 }

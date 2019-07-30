@@ -9,7 +9,7 @@ for(let j=12;j>0;j--){
     divClassHisto.appendChild(divClassRonds);
     for (let i=0;i<4;i++){
         let divClassRond = document.createElement("div");
-        divClassRond.setAttribute("class", "rond "+i+" blanc");
+        divClassRond.setAttribute("class", "rond "+i+" c0");
         divClassRonds.appendChild(divClassRond);
     }
     let divClassPetitRonds = document.createElement("div");
@@ -17,7 +17,7 @@ for(let j=12;j>0;j--){
     divClassHisto.appendChild(divClassPetitRonds);
     for (let i=0;i<4;i++){
         let divClassPetitRond = document.createElement("div");
-        divClassPetitRond.setAttribute("class", "petit-rond "+i+" blanc");
+        divClassPetitRond.setAttribute("class", "petit-rond "+i+" c0");
         divClassPetitRonds.appendChild(divClassPetitRond);
     }
 }
@@ -25,7 +25,7 @@ for(let j=12;j>0;j--){
 // couleur
 let divColor = document.getElementById("couleur");
 let color = divColor.getElementsByClassName("rond");
-let selectColor = "rond blanc";
+let selectColor = "rond c0";
 for (let i=0; i< color.length;i++){
     color[i].addEventListener("click", function(){ selectColor = (color[i].className);}); 
 }
@@ -45,26 +45,34 @@ function numAlea(min, max) {
 let reponseCouleur=[];
 function tirage(){
     for (let i=0;i<4;i++){
-        reponseCouleur[i]=numAlea(0,5);
+        reponseCouleur[i]=numAlea(1,7);
     }
 }
 // let's play to check
 let rondColor=[];
 let essaie=0;
+let bon=0;
+let malplace=0;
 tirage();
 function check(){
+    console.log(reponseCouleur);
     for (let i=0; i< colorEstimation.length;i++){
-        if (colorEstimation[i].className != "rond blanc"){
+        if (colorEstimation[i].className != "rond c0"){
             rondColor[i]=1;
         }
     }
     if ((rondColor[0]==1)&&(rondColor[1]==1)&&(rondColor[2]==1)&&(rondColor[3]==1)){
-        
-        // reset le champs Estimation
+        // reset le champs Estimation + check
         for (let i=0; i< colorEstimation.length;i++){
-            colorEstimation[i].className = "rond blanc";
+            if (colorEstimation[i].className[colorEstimation[i].className.length-1] == reponseCouleur[i]){
+                bon++;
+            }
+            //console.log(colorEstimation[i].className[colorEstimation[i].className.length-1]);
+            colorEstimation[i].className = "rond c0";
             essaie++;
             rondColor=[];
         }
+        console.log(bon);
+        bon=0;
     }
 }
