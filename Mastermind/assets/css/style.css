@@ -96,3 +96,28 @@ button, #estimation .rond, #couleur .rond{
 .c7{
     background-color: #000;
 }
+#message{
+    display: none;
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    background: #eee;
+    top:0;
+    left:0;
+    animation: messageTab 1.5s forwards;
+    text-align: center;
+}
+#message p{
+    margin: 9% auto;
+    font-size: 3.5vh;
+}
+@keyframes messageTab{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
