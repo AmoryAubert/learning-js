@@ -111,7 +111,7 @@ button, #estimation .rond, #couleur .rond{
 }
 #message p{
     margin: 9% auto;
-    font-size: 3.5vh;
+    font-size: 1.5em;
 }
 @keyframes messageTab{
     from{
