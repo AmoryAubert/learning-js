@@ -1,6 +1,6 @@
 H = screen.availHeight;// Hauteur
 W = screen.availWidth; // Largeur
-console.log(W+" x "+H);
+//console.log(W+" x "+H);
 message = document.getElementById("message");
 message.style.marginTop = (H/2)-300+"px";
 message.style.marginLeft = (W/2)-200+"px";
