@@ -65,7 +65,7 @@ let essaie=0;
 let bon=0;
 let malplace=0;
 tirage();
-console.log(reponseCouleur);
+//console.log(reponseCouleur);
 for (let i = 0; i < reponseCouleur.length; i++){
     switch(reponseCouleur[i]){
         case 1: check02[0] += 1; break;
@@ -132,12 +132,12 @@ function check(){
     }
 }
 function win(){
-    console.log('gagné');
+    //console.log('gagné');
     stuckBtn();
     message.innerHTML = "<p>Tu as gagné !</p>";
 }
 function loose(){
-    console.log('perdu');
+    //console.log('perdu');
     stuckBtn();
     message.innerHTML = "<p>Tu as perdu !</p>";
 }
